@@ -1,5 +1,5 @@
 angular
-  .module('instagramApp')
+  .module('wildside')
   .config(Router);
 
 Router.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];

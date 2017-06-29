@@ -1,5 +1,5 @@
 angular
-  .module('instagramApp')
+  .module('wildside')
   .config(Auth);
 
 Auth.$inject = ['$authProvider'];

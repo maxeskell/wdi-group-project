@@ -1,5 +1,5 @@
 angular
-  .module('instagramApp')
+  .module('wildside')
   .directive('base64', base64);
 
 function base64() {
