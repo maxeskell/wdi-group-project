@@ -1,4 +1,20 @@
 // Import all of your scss files here
+
+
+// Variables
+$primaryText: #2F4F4F;
+$fontStack: karla, sans-serif;;
+
+// Extends
+.title-styles {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+// Styles
 body {
-  background-color: red;
+  font-family: $fontStack;
+  font-weight: 300;
+  color: $primaryText;
 }
