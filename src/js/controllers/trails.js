@@ -1,7 +1,8 @@
 angular
   .module('wildside')
   .controller('TrailsIndexCtrl', TrailsIndexCtrl)
-  .controller('TrailsShowCtrl', TrailsShowCtrl);
+  .controller('TrailsShowCtrl', TrailsShowCtrl)
+  .controller('TrailsNewCtrl', TrailsNewCtrl);
 
 TrailsIndexCtrl.$inject = ['Trail'];
 
