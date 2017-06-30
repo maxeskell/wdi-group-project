@@ -8,7 +8,16 @@
 <div class="columns is-mobile">
   <div ng-repeate="trail in trailIndex.all" class="column">
     <div class="card">
-      //image //title
+      <div class="card-image">
+        <div class="image" style="background-image:url('{{ trail.imageSRC }}')" ui-sref="trailsShow({ id: trail.id })">
+        </div>
+      </div>
+      <div class="content">
+        <p>Trail name: {{ trail.trailName }}</p>
+        <p>Created by: {{ trail.createdBy }}</p>
+        <p>Trail description: {{ trail.description }}</p>
+        <p>Trail difficulty: {{ trail.difficulty }}</p>
+      </div>
     </div>
   </div>
 </div>

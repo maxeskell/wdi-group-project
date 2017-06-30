@@ -26,3 +26,21 @@ function TrailsShowCtrl(Trail, $state) {
 
   vm.delete = trailsDelete;
 }
+
+TrailsNewCtrl.$inject = ['Trail', '$state'];
+
+function TrailsNewCtrl(Trail, $state) {
+  const vm = this;
+  vm.trail = {};
+
+  function trailsCreate() {
+    if (vm.newForm.$valid) {
+      Trail
+        .save(vm.trail)
+        .$promise
+        .then(() => $state.go('trailsIndex'));
+    }
+  }
+
+  vm.create = trailsCreate;
+}
