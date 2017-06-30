@@ -1,8 +1,12 @@
 // Import all of your scss files here
 
-
 // Variables
-$primaryText: #2F4F4F;
+$color1: #D8CAA8;
+$color2: #5C832F;
+$color3: #284907;
+$color4: #382513;
+$color5: #363942;
+
 $fontStack: karla, sans-serif;;
 
 // Extends
@@ -16,5 +20,5 @@ $fontStack: karla, sans-serif;;
 body {
   font-family: $fontStack;
   font-weight: 300;
-  color: $primaryText;
+  color: $color5;
 }
