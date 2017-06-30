@@ -4,6 +4,7 @@ angular
   .controller('LoginCtrl', LoginCtrl);
 
 RegisterCtrl.$inject = ['$auth', '$state'];
+
 function RegisterCtrl($auth, $state) {
   const vm = this;
   vm.user = {};
@@ -20,6 +21,7 @@ function RegisterCtrl($auth, $state) {
 }
 
 LoginCtrl.$inject = ['$auth', '$state'];
+
 function LoginCtrl($auth, $state) {
   const vm = this;
   vm.credentials = {};
@@ -27,7 +29,7 @@ function LoginCtrl($auth, $state) {
   function submit() {
     if (vm.loginForm.$valid) {
       $auth.login(vm.credentials)
-        .then(() => $state.go('postsIndex'))
+        .then(() => $state.go('trailsIndex'))
         .catch(() => $state.go('login'));
     }
   }

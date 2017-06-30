@@ -6,7 +6,7 @@ angular
 Trail.$inject = ['$resource'];
 
 function Trail($resource) {
-  return new $resource('/api/posts/:id', {
+  return new $resource('/api/trails/:id', {
     id: '@id'
   }, {
     update: {
@@ -18,7 +18,7 @@ function Trail($resource) {
 TrailComment.$inject = ['$resource'];
 
 function TrailComment($resource) {
-  return new $resource('/api/posts/:postId/comments/:id', {
+  return new $resource('/api/trails/:postId/comments/:id', {
     id: '@id'
   }, {
     update: {

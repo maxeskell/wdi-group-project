@@ -13,7 +13,7 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       templateUrl: 'js/views/static/home.html'
     })
     .state('trailsIndex', {
-      url: '/',
+      url: '/trails',
       templateUrl: 'js/views/trails/index.html',
       controller: 'TrailsIndexCtrl as trailsIndex'
     })

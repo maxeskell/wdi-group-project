@@ -1,12 +1,10 @@
-<!DOCTYPE html> //page title
+<!DOCTYPE html>
 <div class="pageTitle">
   <h1 class="title is-1">Trails index page</h1>
 </div>
 
-
-//show all cards in four columns
 <div class="columns is-mobile">
-  <div ng-repeat="trail in trailIndex.all" class="column">
+  <div ng-repeat="trail in trailsIndex.all" class="column">
     <div class="card">
       <div class="card-image">
         <div class="image" style="background-image:url('{{ trail.imageSRC }}')" ui-sref="trailsShow({ id: trail.id })">
