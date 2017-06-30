@@ -16,6 +16,11 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/',
       templateUrl: 'js/views/trails/index.html',
       controller: 'TrailsIndexCtrl as trailsIndex'
+    })
+    .state('trailsShow', {
+      url: '/trails/:id',
+      templateUrl: 'js/views/trails/show.html',
+      controller: 'TrailsShowCtrl as trailsShow'
     });
 
   $urlRouterProvider.otherwise('/');
