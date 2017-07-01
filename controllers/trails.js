@@ -50,10 +50,47 @@ function deleteRoute(req, res, next) {
     .catch(next);
 }
 
+function addCommentRoute(req, res, next) {
+
+  req.body.createdBy = req.user;
+
+  Trail
+    .findById(req.params.id)
+    .exec()
+    .then((post) => {
+      if(!post) return res.notFound();
+
+      const comment = post.comments.create(req.body);
+      post.comments.push(comment);
+
+      return post.save()
+        .then(() => res.json(comment));
+    })
+    .catch(next);
+}
+
+function deleteCommentRoute(req, res, next) {
+  Trail
+    .findById(req.params.id)
+    .exec()
+    .then((post) => {
+      if(!post) return res.notFound();
+
+      const comment = post.comments.id(req.params.commentId);
+      comment.remove();
+
+      return post.save();
+    })
+    .then(() => res.status(204).end())
+    .catch(next);
+}
+
 module.exports = {
   index: indexRoute,
   show: showRoute,
   update: updateRoute,
   create: createRoute,
-  delete: deleteRoute
+  delete: deleteRoute,
+  addComment: addCommentRoute,
+  deleteComment: deleteCommentRoute
 };

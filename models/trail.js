@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 const s3 = require('../lib/s3');
 
+const commentSchema = new mongoose.Schema({
+  text: { type: String, required: true },
+  createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
+});
+
 const trailSchema = new mongoose.Schema({
   trailName: {
     type: String,
@@ -22,7 +27,8 @@ const trailSchema = new mongoose.Schema({
     ref: 'User',
     required: true
   },
-  trail: []
+  trail: [],
+  comments: [commentSchema]
 });
 
 trailSchema

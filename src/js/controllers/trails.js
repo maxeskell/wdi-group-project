@@ -13,9 +13,9 @@ function TrailsIndexCtrl(Trail) {
 }
 
 
-TrailsShowCtrl.$inject = ['Trail', '$state'];
+TrailsShowCtrl.$inject = ['Trail', '$state', 'TrailComment'];
 
-function TrailsShowCtrl(Trail, $state) {
+function TrailsShowCtrl(Trail, $state, TrailComment) {
   const vm = this;
   vm.trail = Trail.get($state.params);
 
@@ -26,6 +26,30 @@ function TrailsShowCtrl(Trail, $state) {
   }
 
   vm.delete = trailsDelete;
+
+  function addComment() {
+    TrailComment
+      .save({ tradilId: vm.trail.id }, vm.newComment)
+      .$promise
+      .then((comment) => {
+        vm.trail.comments.push(comment);
+        vm.newComment = {};
+      });
+  }
+
+  vm.addComment = addComment;
+
+  function deleteComment(comment) {
+    TrailComment
+      .delete({ trailId: vm.trail.id, id: comment.id })
+      .$promise
+      .then(() => {
+        const index = vm.trail.comments.indexOf(comment);
+        vm.trail.comments.splice(index, 1);
+      });
+  }
+
+  vm.deleteComment = deleteComment;
 }
 
 TrailsNewCtrl.$inject = ['Trail', '$state'];

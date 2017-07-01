@@ -67,6 +67,19 @@ userSchema.pre('remove', function removeImage(next) {
   next();
 });
 
+userSchema.pre('remove', function removeUserTrail(next) {
+  this.model('Trail')
+    .remove({ createdBy: this.id })
+    .then(() => {
+      return this.model('Trail').update(
+        { 'comments.createdBy': this.id },
+        { $pull: { comments: { createdBy: this.id } } }
+      );
+    })
+    .then(next)
+    .catch(next);
+});
+
 
 
 module.exports = mongoose.model('User', userSchema);
