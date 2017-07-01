@@ -1,4 +1,35 @@
-<!DOCTYPE html> //page title
+<!DOCTYPE html>
 <div class="pageTitle">
   <h1 class="title is-1">See your trail</h1>
+</div>
+
+<div class="columns is-mobile">
+  <div class="card">
+    <div class="card-image">
+      <div class="image" style="background-image:url('{{ trailsShow.trail.imageSRC }}')">
+      </div>
+    </div>
+    <div class="content">
+      <p>Trail name: {{ trailsShow.trail.trailName }}</p>
+      <p>Created by: {{ trailsShow.trail.createdBy.username }}</p>
+      <p>Trail description: {{ trailsShow.trail.description }}</p>
+      <p>Trail difficulty: {{ trailsShow.trail.difficulty }}</p>
+      <button ui-sref="trailsEdit({ id: trail.id })" class="button is-warning">Edit</button>
+      <button ng-click="trailsShow.delete()" class="button is-danger">Delete</button>
+    </div>
+    <hr>
+
+    <div class="content">
+      <h2>Comments</h2>
+      <ul class="comments__created">
+        <li ng-repeat="comment in trailsShow.trail.comments track by $index"><strong>{{ comment.createdBy.username }}</strong> - {{ comment.text }} <button class="button is-danger" ng-click="trailsShow.deleteComment(comment)">Delete</button></li>
+      </ul>
+      <form ng-submit="trailsShow.addComment()">
+        <label class="lable">Add comment</label>
+        <textarea ng-model="trailsShow.newComment.text"></textarea>
+        <button class="button is-primary">Comment</button>
+      </form>
+    </div>
+
+  </div>
 </div>

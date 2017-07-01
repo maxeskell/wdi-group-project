@@ -2,8 +2,15 @@ const mongoose = require('mongoose');
 const s3 = require('../lib/s3');
 
 const commentSchema = new mongoose.Schema({
-  text: { type: String, required: true },
-  createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
+  text: {
+    type: String,
+    required: true
+  },
+  createdBy: {
+    type: mongoose.Schema.ObjectId,
+    ref: 'User',
+    required: true
+  }
 });
 
 const trailSchema = new mongoose.Schema({
@@ -43,7 +50,7 @@ trailSchema
   .get(function getImageSRC() {
     if (!this.image) return null;
     if (this.image.match(/^http/)) return this.image;
-    return `https://s3-eu-west-1.amazonaws.com/${process.env.AWS_BUCKET_NAME_GROUP_PROJECT}/${this.image}`;
+    return `https://s3-eu-west-1.amazonaws.com/wdi27-group-project/${this.image}`;
   });
 
 trailSchema.pre('save', function checkPreviousImage(next) {

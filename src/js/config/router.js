@@ -17,10 +17,20 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       templateUrl: 'js/views/trails/index.html',
       controller: 'TrailsIndexCtrl as trailsIndex'
     })
+    .state('trailsNew', {
+      url: '/trails/new',
+      templateUrl: 'js/views/trails/new.html',
+      controller: 'TrailsNewCtrl as trailsNew'
+    })
     .state('trailsShow', {
       url: '/trails/:id',
       templateUrl: 'js/views/trails/show.html',
       controller: 'TrailsShowCtrl as trailsShow'
+    })
+    .state('trailsEdit', {
+      url: '/trails/:id/edit',
+      templateUrl: '/js/views/trails/edit.html',
+      controller: 'TrailsEditCtrl as trailsEdit'
     });
 
   $urlRouterProvider.otherwise('/');

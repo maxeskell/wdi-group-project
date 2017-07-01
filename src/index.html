@@ -20,21 +20,18 @@
 <body>
   <nav class="nav has-shadow">
     <div class="nav-left">
-      <h1 class="nav-item mainTitle">WildSide</h1>
+      <h1 class="nav-item mainTitle"><a href="/">WildSide</a></h1>
     </div>
     <div class="nav-center">
-      <a class="nav-item">Trails</a>
+      <a class="nav-item" ui-sref="trailsIndex">Trails</a>
     </div>
     <div class="nav-right">
-      <a class="nav-item">Create a Trail</a>
-      <a class="nav-item">Login</a>
-      <a class="nav-item">Register</a>
-      <a class="nav-item">Logout</a>
-      <a class="nav-item">Profile</a>
+      <a class="nav-item" ui-sref="trailsNew">Create a Trail</a>
+      <a class="nav-item" ui-sref="login">Login</a>
+      <a class="nav-item" ui-sref="register">Register</a>
+      <a class="nav-item" ui-sref="profile">Profile</a>
     </div>
   </nav>
-
-
 
   <div class="container">
     <div class="message" ng-if="main.message">

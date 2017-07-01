@@ -1,20 +1,22 @@
 const router = require('express').Router();
 const trails = require('../controllers/trails');
+const imageUpload = require('../lib/imageUpload');
 
 router.route('/trails')
-.get(trails.index);
+  .get(trails.index)
+  .post(imageUpload, trails.create);
 
 router.route('/trails/:id')
-.get(trails.show)
-.put(trails.update)
-.patch(trails.update)
-.delete(trails.delete);
+  .get(trails.show)
+  .put(imageUpload, trails.update)
+  .patch(imageUpload, trails.update)
+  .delete(trails.delete);
 
-router.route('/posts/:id/comments')
-.post(trails.addComment);
+router.route('/trails/:id/comments')
+  .post(trails.addComment);
 
-router.route('/posts/:id/comments/:commentId')
-.delete(trails.deleteComment);  
+router.route('/trails/:id/comments/:commentId')
+  .delete(trails.deleteComment);
 
 //catch all for errors
 router.all('*', (req, res) => res.notFound());

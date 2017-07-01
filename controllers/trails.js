@@ -8,11 +8,15 @@ function indexRoute(req, res, next) {
     .catch(next);
 }
 
-function createRoute(req, res) {
-  Trail.create(req.body.trail, (err, trail) => {
-    if (err) return res.status(400).json(err);
-    return res.status(201).json(trail);
-  });
+function createRoute(req, res, next) {
+
+  if (req.file) req.body.image = req.file.filename;
+  req.body.createdBy = req.user;
+
+  Trail
+    .create(req.body)
+    .then((post) => res.status(201).json(post))
+    .catch(next);
 }
 
 function updateRoute(req, res) {
@@ -28,6 +32,7 @@ function updateRoute(req, res) {
 function showRoute(req, res, next) {
   Trail
     .findById(req.params.id)
+    .populate('createdBy comments.createdBy')
     .exec()
     .then((trail) => {
       if (!trail) return res.notFound();
@@ -58,7 +63,7 @@ function addCommentRoute(req, res, next) {
     .findById(req.params.id)
     .exec()
     .then((post) => {
-      if(!post) return res.notFound();
+      if (!post) return res.notFound();
 
       const comment = post.comments.create(req.body);
       post.comments.push(comment);
@@ -74,7 +79,7 @@ function deleteCommentRoute(req, res, next) {
     .findById(req.params.id)
     .exec()
     .then((post) => {
-      if(!post) return res.notFound();
+      if (!post) return res.notFound();
 
       const comment = post.comments.id(req.params.commentId);
       comment.remove();
