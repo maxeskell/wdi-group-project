@@ -6,13 +6,13 @@
 <div class="row">
   <div class="field">
 
-    <form name="trailsNew.newForm" ng-submit="trailsNew.create()" novalidate>
+    <form name="trailsEdit.editForm" ng-submit="trailsEdit.update()" novalidate>
 
       <div class="field">
         <p class="control">
           <label class="label" for="image">Image</label>
-          <input class="input" base64 type="file" name="base64" id="image" ng-model="trailsNew.trail.base64" required>
-          <div ng-messages="trailsNew.newForm.base64.$error" role="alert" ng-show="(trailsNew.newForm.$submitted || trailsNew.newForm.base64.$touched) && trailsNew.newForm.base64.$invalid" class="error">
+          <input class="input" base64 type="file" name="base64" id="image" ng-model="trailsEdit.trail.base64" required>
+          <div ng-messages="trailsEdit.editForm.base64.$error" role="alert" ng-show="(trailsEdit.editForm.$submitted || trailsEdit.editForm.base64.$touched) && trailsEdit.editForm.base64.$invalid" class="error">
             <div ng-message="required">Image is required.</div>
           </div>
         </p>
@@ -21,8 +21,8 @@
       <div class="field">
         <p class="control">
           <label class="label" for="trailName">Trail name</label>
-          <input class="input" type="text" name="trailName" id="trailName" ng-model="trailsNew.trail.trailName" required>
-          <div ng-messages="trailsNew.newForm.trailName.$error" role="alert" ng-show="(trailsNew.newForm.$submitted || trailsNew.newForm.trailName.$touched) && trailsNew.newForm.trailName.$invalid" class="error">
+          <input class="input" type="text" name="trailName" id="trailName" ng-model="trailsEdit.trail.trailName" required>
+          <div ng-messages="trailsEdit.editForm.trailName.$error" role="alert" ng-show="(trailsEdit.editForm.$submitted || trailsEdit.editForm.trailName.$touched) && trailsEdit.editForm.trailName.$invalid" class="error">
             <div ng-message="required">Trail name is required.</div>
           </div>
         </p>
@@ -31,8 +31,8 @@
       <div class="field">
         <p class="control">
           <label class="label" for="description">Trail description</label>
-          <input class="input" type="text" name="description" id="description" ng-model="trailsNew.trail.description" required>
-          <div ng-messages="trailsNew.newForm.description.$error" role="alert" ng-show="(trailsNew.newForm.$submitted || trailsNew.newForm.description.$touched) && trailsNew.newForm.description.$invalid" class="error">
+          <input class="input" type="text" name="description" id="description" ng-model="trailsEdit.trail.description" required>
+          <div ng-messages="trailsEdit.editForm.description.$error" role="alert" ng-show="(trailsEdit.editForm.$submitted || trailsEdit.editForm.description.$touched) && trailsEdit.editForm.description.$invalid" class="error">
             <div ng-message="required">Trail description is required.</div>
           </div>
         </p>
@@ -41,8 +41,8 @@
       <div class="field">
         <p class="control">
           <label class="label" for="difficulty">Trail difficulty</label>
-          <input class="input" type="text" name="difficulty" id="difficulty" ng-model="trailsNew.trail.difficulty" required>
-          <div ng-messages="trailsNew.newForm.difficulty.$error" role="alert" ng-show="(trailsNew.newForm.$submitted || trailsNew.newForm.difficulty.$touched) && trailsNew.newForm.difficulty.$invalid" class="error">
+          <input class="input" type="text" name="difficulty" id="difficulty" ng-model="trailsEdit.trail.difficulty" required>
+          <div ng-messages="trailsEdit.editForm.difficulty.$error" role="alert" ng-show="(trailsEdit.editForm.$submitted || trailsEdit.editForm.difficulty.$touched) && trailsEdit.editForm.difficulty.$invalid" class="error">
             <div ng-message="required">Trail difficulty is required.</div>
           </div>
         </p>
@@ -50,7 +50,7 @@
 
       <div class="field">
         <p class="control">
-          <button class="button is-primary">Create</button>
+          <button type="submit" class="button is-primary">Update trail</button>
         </p>
       </div>
 

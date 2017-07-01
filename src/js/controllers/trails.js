@@ -92,8 +92,6 @@ function TrailsEditCtrl($state, Trail) {
       .$promise
       .then((trail) => {
         vm.trail = trail;
-        // To make sure that when we send back the category, we're just sending back the id, not the whole category object
-        vm.trail.category = vm.trail.category.id;
       });
   }
 
