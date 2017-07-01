@@ -21,4 +21,20 @@ body {
   font-family: $fontStack;
   font-weight: 300;
   color: $color5;
+  background-color: $color2;
+  height: 100vh;
+}
+
+nav {
+  font-family: 'Gloria Hallelujah', cursive;
+  .mainTitle {
+    font-size: 35px;
+    text-transform: uppercase;
+    color: $color2;
+  }
+  .nav-center {
+    .nav-item {
+      font-size: 25px;
+    }
+  }
 }
