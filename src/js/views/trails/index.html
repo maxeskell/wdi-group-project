@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<div class="pageTitle">
-  <h1 class="title is-1">Trails index page</h1>
-</div>
 
-<div class="columns is-mobile">
-  <div ng-repeat="trail in trailsIndex.all" class="column">
-    <div class="card">
+<div class="column is-10 is-offset-1 ">
+  <div ng-repeat="trail in trailsIndex.all">
+    <div class="card has-shadow">
       <div class="card-image">
         <div class="image" style="background-image:url('{{ trail.imageSRC }}')" ui-sref="trailsShow({ id: trail.id })">
         </div>
       </div>
       <div class="content">
-        <p><a ui-sref="trailsShow({ id: trail.id })">Trail name: {{ trail.trailName }}</a></p>
-        <p>Created by: {{ trail.createdBy }}</p>
-        <p>Trail description: {{ trail.description }}</p>
-        <p>Trail difficulty: {{ trail.difficulty }}</p>
+          <p><a ui-sref="trailsShow({ id: trail.id })">Trail name: {{ trail.trailName }}</a></p>
+          <p>Created by: {{ trail.createdBy }}</p>
+          <p>Trail description: {{ trail.description }}</p>
+          <p>Trail difficulty: {{ trail.difficulty }}</p>
+        <div class="map">
+          MAP GOES HERE
+        </div>
+
       </div>
     </div>
+
   </div>
 </div>

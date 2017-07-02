@@ -14,23 +14,26 @@ $fontStack: karla, sans-serif;;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
+  color: $color3;
 }
 
 // Styles
 body {
   font-family: $fontStack;
   font-weight: 300;
-  color: $color5;
   background-color: $color1;
   height: 100vh;
+  &.trailsIndex {
+    height: 100%;
+  }
 }
 
 nav {
   font-family: 'Gloria Hallelujah', cursive;
+  padding: 10px;
   .mainTitle {
     font-size: 35px;
     text-transform: uppercase;
-    color: $color2;
   }
   .nav-center {
     .nav-item {
@@ -39,8 +42,24 @@ nav {
   }
 }
 
+.card-image{
+  margin: 20px 0;
+}
+
 .image {
-  height: 200px;
+  height: 300px;
+  background-repeat: no-repeat;
+  width: 600px;
+  margin: 0 auto;
+
+}
+
+.map {
+  background-color: lightgrey;
+  height: 500px;
+  margin: 20px auto;
+  padding: 20px;
+
 }
 
 .facebook {
