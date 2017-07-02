@@ -14,10 +14,10 @@ Trail.collection.drop();
 User
   .create([{
     username: 'max',
-    email: 'max@max',
+    email: 'max@sam',
     password: 'password',
     passwordConfirmation: 'password',
-    image: 'http://www.wbs.ac.uk/wbs2012/cache/file/6FC91D39-0CE7-3021-31A9D17BBF0F1E4C.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/d/d3/Fischotter%2C_Lutra_Lutra.JPG',
     postcode: 'B461QR'
   }])
   .then((users) => {

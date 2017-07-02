@@ -13,9 +13,6 @@ router.route('/trails/:id')
   .patch(imageUpload, trails.update)
   .delete(trails.delete);
 
-
-
-
 router.route('/trails/:id/comments')
   .post(trails.addComment);
 
@@ -23,7 +20,7 @@ router.route('/trails/:id/comments/:commentId')
   .delete(trails.deleteComment);
 
 router.route('/register')
-  .post(auth.register);
+  .post(imageUpload, auth.register);
 
 router.route('/login')
   .post(auth.login);
