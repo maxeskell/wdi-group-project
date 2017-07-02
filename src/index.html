@@ -17,19 +17,20 @@
   <link rel="icon" type="image/jpg" href="../images/favicon-32x32.jpg" sizes="32x32" />
 </head>
 
-<body>
+<body ng-controller="MainCtrl as main">
   <nav class="nav has-shadow">
     <div class="nav-left">
-      <h1 class="nav-item mainTitle"><a href="/">WildSide</a></h1>
+      <h1 class="nav-item mainTitle"><a ui-sref="home">WildSide</a></h1>
     </div>
     <div class="nav-center">
-      <a class="nav-item" ui-sref="trailsIndex">Trails</a>
+      <a class="nav-item" ui-sref="trailsIndex" ui-sref-active="active">Trails</a>
     </div>
     <div class="nav-right">
-      <a class="nav-item" ui-sref="trailsNew">Create a Trail</a>
-      <a class="nav-item" ui-sref="login">Login</a>
-      <a class="nav-item" ui-sref="register">Register</a>
-      <a class="nav-item" ui-sref="profile">Profile</a>
+      <a class="nav-item" ui-sref="trailsNew" ui-sref-active="active" ng-if="main.isAuthenticated()">Create a Trail</a>
+      <a class="nav-item" ui-sref="login" ui-sref-active="active" ng-if="!main.isAuthenticated()">Login</a>
+      <a class="nav-item" ui-sref="register" ui-sref-active="active" ng-if="!main.isAuthenticated()">Register</a>
+      <a class="nav-item" ui-sref="profile" ui-sref-active="active" ng-if="main.isAuthenticated()">Profile</a>
+      <a class="nav-item" ng-click="main.logout()" ui-sref-active="active" ng-if="main.isAuthenticated()">Logout</a>
     </div>
   </nav>
 

@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<div class="pageTitle">
-  <h1 class="title is-1">Create a new trail</h1>
-</div>
 
-<div class="row">
+<div class="column is-8 is-offset-2">
   <div class="field">
 
     <form name="trailsNew.newForm" ng-submit="trailsNew.create()" novalidate>
 
       <div class="field">
-        <p class="control">
-          <label class="label" for="image">Image</label>
-          <input class="input" base64 type="file" name="base64" id="image" ng-model="trailsNew.trail.base64" required>
+        <p class="control has-icons-left">
+          <input class="input" base64 type="file" name="base64" id="image" ng-model="trailsNew.trail.base64" placeholder="Image" required>
+          <span class="icon is-medium is-left">
+            <i class="fa fa-picture-o"></i>
+          </span>
           <div ng-messages="trailsNew.newForm.base64.$error" role="alert" ng-show="(trailsNew.newForm.$submitted || trailsNew.newForm.base64.$touched) && trailsNew.newForm.base64.$invalid" class="error">
             <div ng-message="required">Image is required.</div>
           </div>
@@ -19,9 +18,11 @@
       </div>
 
       <div class="field">
-        <p class="control">
-          <label class="label" for="trailName">Trail name</label>
-          <input class="input" type="text" name="trailName" id="trailName" ng-model="trailsNew.trail.trailName" required>
+        <p class="control has-icons-left">
+          <input class="input" type="text" name="trailName" id="trailName" ng-model="trailsNew.trail.trailName" placeholder="Trail Name" required>
+          <span class="icon is-medium is-left">
+            <i class="fa fa-leaf"></i>
+          </span>
           <div ng-messages="trailsNew.newForm.trailName.$error" role="alert" ng-show="(trailsNew.newForm.$submitted || trailsNew.newForm.trailName.$touched) && trailsNew.newForm.trailName.$invalid" class="error">
             <div ng-message="required">Trail name is required.</div>
           </div>
@@ -29,9 +30,11 @@
       </div>
 
       <div class="field">
-        <p class="control">
-          <label class="label" for="description">Trail description</label>
-          <input class="input" type="text" name="description" id="description" ng-model="trailsNew.trail.description" required>
+        <p class="control has-icons-left">
+          <input class="input" type="text" name="description" id="description" ng-model="trailsNew.trail.description" placeholder="Trail Description" required>
+          <span class="icon is-medium is-left">
+            <i class="fa fa-arrows"></i>
+          </span>
           <div ng-messages="trailsNew.newForm.description.$error" role="alert" ng-show="(trailsNew.newForm.$submitted || trailsNew.newForm.description.$touched) && trailsNew.newForm.description.$invalid" class="error">
             <div ng-message="required">Trail description is required.</div>
           </div>
@@ -39,9 +42,21 @@
       </div>
 
       <div class="field">
-        <p class="control">
-          <label class="label" for="difficulty">Trail difficulty</label>
-          <input class="input" type="text" name="difficulty" id="difficulty" ng-model="trailsNew.trail.difficulty" required>
+        <p class="control has-icons-left">
+          <!-- <input class="input" type="text" name="difficulty" id="difficulty" ng-model="trailsNew.trail.difficulty" placeholder="Trail Difficulty" required> -->
+          <span class="select is full-width">
+            <select name="difficulty" id="difficulty" ng-model="trailsNew.trail.difficulty" required>
+              <option selected disabled>Trail Difficulty</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </span>
+          <span class="icon is-medium is-left">
+            <i class="fa fa-warning"></i>
+          </span>
           <div ng-messages="trailsNew.newForm.difficulty.$error" role="alert" ng-show="(trailsNew.newForm.$submitted || trailsNew.newForm.difficulty.$touched) && trailsNew.newForm.difficulty.$invalid" class="error">
             <div ng-message="required">Trail difficulty is required.</div>
           </div>
@@ -50,7 +65,7 @@
 
       <div class="field">
         <p class="control">
-          <button class="button is-primary">Create</button>
+          <button class="button is-success is-fullwidth">Create</button>
         </p>
       </div>
 

@@ -18,7 +18,7 @@ function Trail($resource) {
 TrailComment.$inject = ['$resource'];
 
 function TrailComment($resource) {
-  return new $resource('/api/trails/:postId/comments/:id', {
+  return new $resource('/api/trails/:trailId/comments/:id', {
     id: '@id'
   }, {
     update: {

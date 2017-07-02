@@ -21,7 +21,7 @@ body {
   font-family: $fontStack;
   font-weight: 300;
   color: $color5;
-  background-color: $color2;
+  background-color: $color1;
   height: 100vh;
 }
 
@@ -41,4 +41,17 @@ nav {
 
 .image {
   height: 200px;
+}
+
+.facebook {
+  margin: 10px 0;
+}
+
+form {
+  margin-top: 10%;
+}
+
+.active {
+  text-decoration: underline;
+  font-weight: bold;
 }

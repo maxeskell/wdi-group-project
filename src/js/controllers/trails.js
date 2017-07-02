@@ -32,7 +32,7 @@ function TrailsShowCtrl(Trail, $state, TrailComment) {
   function addComment() {
     TrailComment
       .save({
-        tradilId: vm.trail.id
+        trailId: vm.trail.id
       }, vm.newComment)
       .$promise
       .then((comment) => {
