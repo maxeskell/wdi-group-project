@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const trails = require('../controllers/trails');
-const auth   = require('../controllers/auth');
+const auth = require('../controllers/auth');
 const imageUpload = require('../lib/imageUpload');
 
 router.route('/trails')
@@ -12,6 +12,9 @@ router.route('/trails/:id')
   .put(imageUpload, trails.update)
   .patch(imageUpload, trails.update)
   .delete(trails.delete);
+
+
+
 
 router.route('/trails/:id/comments')
   .post(trails.addComment);
