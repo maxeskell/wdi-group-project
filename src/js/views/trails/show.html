@@ -15,7 +15,7 @@
       <p>Trail description: {{ trailsShow.trail.description }}</p>
       <p>Trail difficulty: {{ trailsShow.trail.difficulty }}</p>
       <button ui-sref="trailsEdit({ id: trail.id })" class="button is-warning">Edit</button>
-      <button ng-click="trailsShow.trail.trailsDelete()" class="button is-danger">Delete</button>
+      <button ng-click="trailsShow.trail.delete()" class="button is-danger">Delete</button>
     </div>
     <hr>
 
