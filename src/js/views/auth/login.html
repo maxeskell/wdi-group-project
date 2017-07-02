@@ -1,4 +1,21 @@
-<!DOCTYPE html> //page title
-<div class="pageTitle">
-  <h1 class="title is-1">Login here</h1>
-</div>
+<!DOCTYPE html>
+<section class="section">
+
+      <form ng-submit="login.submit()" name="login.loginForm" novalidate>
+        <div class="field">
+          <p class="control"><label class="label" for="email">Email</label></p>
+          <input class="input" type="text" id="email" name="email" ng-model="login.credentials.email">
+        </div>
+
+        <div class="field">
+          <p class="control"><label class="label" for="password">Password</label></p>
+          <input class="input" type="password" id="password" name="password" ng-model="login.credentials.password">
+        </div>
+
+        <div class="field">
+
+          <p class="control"><input type="submit" class="button is-primary" value="Login" ></p>
+        </div>
+
+      </form>
+</section>

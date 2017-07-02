@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const trails = require('../controllers/trails');
+const auth   = require('../controllers/auth');
 const imageUpload = require('../lib/imageUpload');
 
 router.route('/trails')
@@ -17,6 +18,13 @@ router.route('/trails/:id/comments')
 
 router.route('/trails/:id/comments/:commentId')
   .delete(trails.deleteComment);
+
+router.route('/register')
+  .post(auth.register);
+
+router.route('/login')
+  .post(auth.login);
+
 
 //catch all for errors
 router.all('*', (req, res) => res.notFound());
