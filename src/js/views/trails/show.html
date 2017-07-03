@@ -18,7 +18,7 @@
 
     <div class="content">
       <h2>Comments</h2>
-      {{trailsShow.trail.trail[0]}}
+      {{trailsShow.trail.route}}
       <ul class="comments__created">
         <li ng-repeat="comment in trailsShow.trail.comments track by $index"><strong>{{ comment.createdBy.username }}</strong> - {{ comment.text }} <button class="button is-danger" ng-click="trailsShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUserId === comment.createdBy.id">Delete</button></li>
       </ul>
@@ -28,6 +28,6 @@
         <button class="button is-primary">Comment</button>
       </form>
     </div>
-    <google-map center="trailsShow.trail.trail[0]"> </google-map>
+    <google-map center="trailsShow.trail.route[0]" route="trailsShow.trail.route"> </google-map>
   </div>
 </div>

@@ -10,19 +10,20 @@ function googleMap() {
     template: '<div class="map">GOOGLE MAP HERE</div>',
     scope: {
       center: '=',
-      path: '='
+      route: '='
     },
     link(scope, element) {
 
       let map = null;
       let marker = null;
+      let poly = null;
 
       scope.$watch('center', initMap);
       scope.$on('$destroy', destroyMap);
       function initMap(center) {
         if(!center) return false;
         map = new google.maps.Map(element[0], {
-          zoom: 14,
+          zoom: 12,
           center: center
         });
 
@@ -30,6 +31,17 @@ function googleMap() {
           position: center,
           map
         });
+
+        poly = new google.maps.Polyline({
+          strokeColor: '#FF0000',
+          strokeOpacity: 1.0,
+          strokeWeight: 2,
+          map,
+          path: scope.route
+
+
+        });
+
       }
 
 
