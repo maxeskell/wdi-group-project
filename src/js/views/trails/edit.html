@@ -41,7 +41,19 @@
       <div class="field">
         <p class="control">
           <label class="label" for="difficulty">Trail difficulty</label>
-          <input class="input" type="text" name="difficulty" id="difficulty" ng-model="trailsEdit.trail.difficulty" required>
+          <span class="select is full-width">
+            <select name="difficulty" id="difficulty" ng-model="trailsEdit.trail.difficulty" required>
+              <option>Trail Difficulty</option>
+              <option ng-selected="trailsEdit.trail.difficulty === 1">1</option>
+              <option ng-selected="trailsEdit.trail.difficulty === 2">2</option>
+              <option ng-selected="trailsEdit.trail.difficulty === 3">3</option>
+              <option ng-selected="trailsEdit.trail.difficulty === 4">4</option>
+              <option ng-selected="trailsEdit.trail.difficulty === 5">5</option>
+            </select>
+          </span>
+          <span class="icon is-medium is-left">
+            <i class="fa fa-warning"></i>
+          </span>
           <div ng-messages="trailsEdit.editForm.difficulty.$error" role="alert" ng-show="(trailsEdit.editForm.$submitted || trailsEdit.editForm.difficulty.$touched) && trailsEdit.editForm.difficulty.$invalid" class="error">
             <div ng-message="required">Trail difficulty is required.</div>
           </div>
