@@ -8,6 +8,7 @@
   <title>WildSide</title>
   <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
   <script src="https://use.fontawesome.com/3818a32d0a.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKBfbXmibiy_CzLqXuWzS0xcZ_ZVZyIjM"></script>
   <!-- inject:js -->
   <!-- endinject -->
   <!-- inject:css -->
@@ -29,7 +30,7 @@
       <a class="nav-item" ui-sref="trailsNew" ui-sref-active="active" ng-if="main.isAuthenticated()">Create a Trail</a>
       <a class="nav-item" ui-sref="login" ui-sref-active="active" ng-if="!main.isAuthenticated()">Login</a>
       <a class="nav-item" ui-sref="register" ui-sref-active="active" ng-if="!main.isAuthenticated()">Register</a>
-      <a class="nav-item" ui-sref="profile" ui-sref-active="active" ng-if="main.isAuthenticated()">Profile</a>
+      <a class="nav-item" ui-sref="profile({ id: main.currentUserId })" ui-sref-active="active" ng-if="main.isAuthenticated()">Profile</a>
       <a class="nav-item" ng-click="main.logout()" ui-sref-active="active" ng-if="main.isAuthenticated()">Logout</a>
     </div>
   </nav>

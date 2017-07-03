@@ -29,21 +29,21 @@ User
         difficulty: 1,
         image: 'https://www.rspb.org.uk/Images/barnowl_tcm9-18232.jpg?width=530&crop=(34,244,962,766)',
         createdBy: users[0],
-        trail: [{
-          lat: 51.515152,
-          lng: 0.072019
+        route: [{
+          lat: 50.8531002,
+          lng: -1.0619831
         }, {
-          lat: 51.516273,
-          lng: -0.076375
+          lat: 50.86339441,
+          lng: -1.06395721
         }, {
-          lat: 51.516273,
-          lng: -0.076375
+          lat: 50.86767395,
+          lng: -1.05803489
         }, {
-          lat: 51.514504,
-          lng: -0.073961
+          lat: 50.86642804,
+          lng: -1.05254173
         }, {
-          lat: 51.514985,
-          lng: -0.072534
+          lat: 50.8654529,
+          lng: -1.047048
         }]
       }, {
         trailName: 'route 2',
@@ -51,9 +51,9 @@ User
         difficulty: 2,
         image: 'https://www.rspb.org.uk/Images/blue_tit_master_tcm9-17216.jpg?width=530&crop=(0,162,800,612)',
         createdBy: users[0],
-        trail: [{
-          lat: 51.5,
-          lng: 0.07
+        route: [{
+          lat: 50.926293,
+          lng: -0.975200
         }, {
           lat: 51.5,
           lng: -0.07
@@ -73,7 +73,7 @@ User
         difficulty: 3,
         image: 'https://www.rspb.org.uk/Images/chaff_tcm9-17518.jpg?width=530&crop=(176,374,1128,910)',
         createdBy: users[0],
-        trail: [{
+        route: [{
           lat: 51.515,
           lng: 0.072
         }, {
@@ -95,7 +95,7 @@ User
         difficulty: 4,
         image: 'https://www.rspb.org.uk/Images/robin_master_tcm9-17658.jpg?width=530&crop=(444,478,1248,930)',
         createdBy: users[0],
-        trail: [{
+        route: [{
           lat: 51.5151,
           lng: 0.0720
         }, {
@@ -117,7 +117,7 @@ User
         difficulty: 5,
         image: 'https://www.rspb.org.uk/Images/swallow_tcm9-18469.jpg?width=530&crop=(44,262,948,770)',
         createdBy: users[0],
-        trail: [{
+        route: [{
           lat: 51.51515,
           lng: 0.07201
         }, {
