@@ -1,4 +1,4 @@
-/* global google */
+    /* global google */
 angular
 .module('wildside')
 .directive('googleMap', googleMap);
@@ -37,6 +37,13 @@ function googleMap() {
         console.log(otherMarker);
         const firstMarker = markers[0];
         const lastMarker = markers[markers.length - 1];
+
+        const bounds = new google.maps.LatLngBounds();
+        bounds.extend(firstMarker);
+        bounds.extend(lastMarker);
+        map.fitBounds(bounds);
+
+
         marker = new google.maps.Marker({
           position: firstMarker,
           map
