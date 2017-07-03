@@ -2,7 +2,7 @@ const Trail = require('../models/trail');
 
 function indexRoute(req, res, next) {
   Trail
-    .find()
+    .find(req.query)
     .populate('createdBy')
     .exec()
     .then((trails) => res.json(trails))

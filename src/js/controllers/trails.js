@@ -14,12 +14,41 @@ function TrailsIndexCtrl(Trail) {
 }
 
 
-TrailsShowCtrl.$inject = ['Trail', '$state', 'TrailComment'];
+TrailsShowCtrl.$inject = ['Trail', '$state', 'TrailComment', 'User', '$auth'];
 
-function TrailsShowCtrl(Trail, $state, TrailComment) {
+function TrailsShowCtrl(Trail, $state, TrailComment, User, $auth) {
   const vm = this;
   vm.newComment = {};
+  vm.user = {};
   vm.trail = Trail.get($state.params);
+  if ($auth.getPayload()) {
+    vm.currentUserId = $auth.getPayload().userId;
+    User.get({ id: vm.currentUserId })
+      .$promise
+      .then((user) => {
+        vm.user = user;
+        vm.user.trailsCompleted = vm.user.trailsCompleted.map((trail) => trail.id);
+      });
+  }
+
+  function toggleCompleted() {
+    const index = vm.user.trailsCompleted.indexOf(vm.trail.id);
+    if(index > -1 ) {
+      vm.user.trailsCompleted.splice(index, 1);
+    } else {
+      vm.user.trailsCompleted.push(vm.trail.id);
+    }
+    User
+      .update({ id: vm.user.id }, vm.user);
+  }
+
+  vm.toggleCompleted = toggleCompleted;
+
+  function isComplete() {
+    return $auth.getPayload() && vm.user.$resolved && vm.user.trailsCompleted.includes($state.params.id);
+  }
+
+  vm.isComplete = isComplete;
 
   function trailsDelete() {
     vm.trail

@@ -4,6 +4,7 @@ const User = require('../models/user');
 function userShow(req, res, next) {
   User
     .findById(req.params.id)
+    .populate('trailsCompleted')
     .exec()
     .then((user) => {
       if (!user) return res.notFound();
@@ -13,7 +14,6 @@ function userShow(req, res, next) {
     .catch(next);
 
 }
-
 
 function userUpdate(req, res, next) {
   if(req.file) req.body.image = req.file.key;
