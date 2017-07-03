@@ -1,7 +1,7 @@
 /* global google */
 angular
-      .module('wildside')
-      .directive('googleMap', googleMap);
+.module('wildside')
+.directive('googleMap', googleMap);
 
 function googleMap() {
   return {
@@ -17,20 +17,44 @@ function googleMap() {
       let map = null;
       let marker = null;
       let poly = null;
+      let markerTwo = null;
+      let markerAll = null;
+
 
       scope.$watch('center', initMap);
       scope.$on('$destroy', destroyMap);
       function initMap(center) {
         if(!center) return false;
         map = new google.maps.Map(element[0], {
-          zoom: 12,
-          center: center
+          zoom: 14,
+          center: center,
+          scrollwheel: false
         });
 
+
+        const markers = scope.route;
+        const otherMarker = markers.slice(1, markers.length -1);
+        console.log(otherMarker);
+        const firstMarker = markers[0];
+        const lastMarker = markers[markers.length - 1];
         marker = new google.maps.Marker({
-          position: center,
+          position: firstMarker,
           map
         });
+        marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
+        markerTwo = new google.maps.Marker({
+          position: lastMarker,
+          map
+        });
+        markerTwo.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png');
+        for(let i = 0; i < otherMarker.length; i++){
+          markerAll = new google.maps.Marker({
+            position: otherMarker[i],
+            map
+          });
+          markerAll.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png');
+        }
+
 
         poly = new google.maps.Polyline({
           strokeColor: '#FF0000',
