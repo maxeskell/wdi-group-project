@@ -38,7 +38,7 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       controller: 'LoginCtrl as login'
     })
     .state('profile', {
-      url: '/profile',
+      url: '/profile/:id',
       templateUrl: 'js/views/auth/profile.html',
       controller: 'ProfileCtrl as profile'
     })
