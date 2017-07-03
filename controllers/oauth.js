@@ -28,7 +28,7 @@ function github(req, res, next) {
     });
   })
   .then((profile) => {
-    return User.findOne({ $or: [{ githubId: profile.id }, { email: profile.email }] })
+    return User.findOne({ $or: [{ githubId: profile.id }, { facebookId: profile.id }, { email: profile.email }] })
       .then((user) => {
         if(!user) {
           user = new User({
@@ -46,7 +46,7 @@ function github(req, res, next) {
     console.log(user);
     //create a JWT token and send it back to the angular app.
     const payload = { userId: user.id };
-    const token = jwt.sign(payload, secret , { expiresIn: '1hr'});
+    const token = jwt.sign(payload, secret , { expiresIn: '23hr'});
 
     return res.json({
       token,
@@ -80,7 +80,7 @@ function facebook(req, res, next) {
   })
   .then((profile) => {
     console.log(profile);
-    return User.findOne({$or: [{ email: profile.email }, { facebookId: profile.id }]})
+    return User.findOne({$or: [{ facebookId: profile.id }, { githubId: profile.id }, { email: profile.email }]})
     .then((user) => {
       if(!user) {
         user = new User({
@@ -96,7 +96,7 @@ function facebook(req, res, next) {
   .then((user) => {
     console.log(user);
     const payload = { userId: user.id };
-    const token = jwt.sign(payload, secret, { expiresIn: '1hr'});
+    const token = jwt.sign(payload, secret, { expiresIn: '23hr'});
 
     return res.json({
       token,

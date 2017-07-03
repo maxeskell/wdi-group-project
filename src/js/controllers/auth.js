@@ -40,7 +40,7 @@ function LoginCtrl($auth, $state) {
   function authenticate(provider) {
     $auth.authenticate(provider)
     .then(() => {
-      $state.go('/trails');
+      $state.go('trailsIndex');
     });
   }
 

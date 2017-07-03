@@ -36,6 +36,8 @@ router.route('/login')
 router.route('/oauth/github')
   .post(oauth.github);
 
+router.route('/oauth/facebook')
+  .post(oauth.facebook);
 
 //catch all for errors
 router.all('*', (req, res) => res.notFound());
