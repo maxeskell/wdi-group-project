@@ -26,6 +26,12 @@ body {
   &.trailsIndex {
     height: 100%;
   }
+  &.trailsShow {
+    height: 100%;
+  }
+  &.trailsNew {
+    height: 100%;
+  }
 }
 
 nav {
@@ -71,6 +77,5 @@ form {
 }
 
 .active {
-  text-decoration: underline;
   font-weight: bold;
 }

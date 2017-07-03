@@ -45,8 +45,8 @@
         <p class="control has-icons-left">
           <!-- <input class="input" type="text" name="difficulty" id="difficulty" ng-model="trailsNew.trail.difficulty" placeholder="Trail Difficulty" required> -->
           <span class="select is full-width">
-            <select name="difficulty" id="difficulty" ng-model="trailsNew.trail.difficulty" required>
-              <option selected disabled>Trail Difficulty</option>
+            <select name="difficulty" id="difficulty" ng-model="trailsNew.trail.difficulty selected" required>
+              <option disabled>Trail Difficulty</option>
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -62,8 +62,11 @@
           </div>
         </p>
       </div>
+      <div class="map">
+        MAP GOES HERE
+      </div>
 
-      <div class="field">
+      <div class="field newBottom">
         <p class="control">
           <button class="button is-success is-fullwidth">Create</button>
         </p>
