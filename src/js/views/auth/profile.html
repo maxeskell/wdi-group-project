@@ -1,10 +1,11 @@
-<img ng-src="{{ profile.user.image }}" alt="profile.user.username">
-<h2>{{ profile.user.username }}</h2>
-<a href="mailto:{{ profile.user.email }}" ng-if="profile.user.email">{{ profile.user.email }}</a>
+<!DOCTYPE html>
 
-<button ng-if="main.isAuthenticated() && main.currentUserId === profile.user.id" ng-click="profile.logout()" ui-sref="trailsEdit({ id: trailsShow.trail.id })" class="button is-warning">Edit profile</button>
+<img ng-src="{{ profile.user.image }}" alt="profile.user.username">
+<h2>Username:  {{ profile.user.username }}</h2>
+<h3 ng-if="main.isAuthenticated() && main.currentUserId === profile.user.id && profile.user.email">Email:  {{ profile.user.email }}</h3>
+
 <button ng-if="main.isAuthenticated() && main.currentUserId === profile.user.id" ng-click="profile.delete()" ui-sref="trailsEdit({ id: trailsShow.trail.id })" class="button is-danger">Delete profile</button>
-<button ng-if="main.isAuthenticated() && main.currentUserId === profile.user.id" ng-click="profile.logout()" class="button is-primary">Logout</button>
+<button ng-if="main.isAuthenticated() && main.currentUserId === profile.user.id" ng-click="main.logout()" class="button is-primary">Logout</button>
 
 <div class="column is-10 is-offset-1 ">
   <div ng-repeat="trail in trailsIndex.all" ng-if="{{ trail.createdBy.username }} === profile.username">
