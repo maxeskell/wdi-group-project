@@ -23,7 +23,9 @@ function TrailsShowCtrl(Trail, $state, TrailComment, User, $auth) {
   vm.trail = Trail.get($state.params);
   if ($auth.getPayload()) {
     vm.currentUserId = $auth.getPayload().userId;
-    User.get({ id: vm.currentUserId })
+    User.get({
+        id: vm.currentUserId
+      })
       .$promise
       .then((user) => {
         vm.user = user;
@@ -33,13 +35,15 @@ function TrailsShowCtrl(Trail, $state, TrailComment, User, $auth) {
 
   function toggleCompleted() {
     const index = vm.user.trailsCompleted.indexOf(vm.trail.id);
-    if(index > -1 ) {
+    if (index > -1) {
       vm.user.trailsCompleted.splice(index, 1);
     } else {
       vm.user.trailsCompleted.push(vm.trail.id);
     }
     User
-      .update({ id: vm.user.id }, vm.user);
+      .update({
+        id: vm.user.id
+      }, vm.user);
   }
 
   vm.toggleCompleted = toggleCompleted;

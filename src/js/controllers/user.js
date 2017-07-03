@@ -11,10 +11,12 @@ function ProfileCtrl($auth, User, $state, Trail) {
     userId
   } = $auth.getPayload();
 
-  vm.trails = Trail.query({ createdBy: $state.params.id});
+  vm.trails = Trail.query({
+    createdBy: $state.params.id
+  });
 
 
-  if(userId) vm.user = User.get({
+  if (userId) vm.user = User.get({
     id: userId
   });
 

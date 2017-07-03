@@ -39,10 +39,10 @@ function LoginCtrl($auth, $state) {
 
   function authenticate(provider) {
     $auth.authenticate(provider)
-    .then(() => {
-      $state.go('trailsIndex');
-    });
+      .then(() => {
+        $state.go('trailsIndex');
+      });
   }
 
-  vm.authenticate =  authenticate;
+  vm.authenticate = authenticate;
 }

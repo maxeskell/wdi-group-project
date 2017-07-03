@@ -1,8 +1,8 @@
 /* global google */
 
 angular
-.module('wildside')
-.directive('googleMapCreate', googleMapCreate);
+  .module('wildside')
+  .directive('googleMapCreate', googleMapCreate);
 
 function googleMapCreate() {
   return {
@@ -21,15 +21,16 @@ function googleMapCreate() {
 
       scope.$watch('center', initMap);
       scope.$on('$destroy', destroyMap);
+
       function initMap(center) {
-        if(!center) return false;
+        if (!center) return false;
         map = new google.maps.Map(element[0], {
           zoom: 14,
           center: center
         });
 
 
-        const  array = [];
+        const array = [];
 
         poly = new google.maps.Polyline({
           strokeColor: '#FF0000',
@@ -38,7 +39,7 @@ function googleMapCreate() {
         });
         poly.setMap(map);
 
-  
+
 
 
         map.addListener('click', (e) => {
