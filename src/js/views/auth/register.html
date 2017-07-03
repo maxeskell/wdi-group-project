@@ -62,10 +62,18 @@
     </div>
   </form>
 
-  <a class="button is-info is-fullwidth facebook">
+  <button class="button is-info is-fullwidth facebook" ng-click="login.authenticate('facebook')">
     <span class="icon">
       <i class="fa fa-facebook"></i>
     </span>
     <span>Register with Facebook</span>
-  </a>
+  </button>
+
+  <button class="button is-info is-fullwidth github"  ng-click="login.authenticate('github')" style="background-color:black;">
+    <span class="icon">
+      <i class="fa fa-github"></i>
+    </span>
+    <span>Register with Github</span>
+  </button>
+
 </div>

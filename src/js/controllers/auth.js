@@ -35,4 +35,14 @@ function LoginCtrl($auth, $state) {
   }
 
   vm.submit = submit;
+
+
+  function authenticate(provider) {
+    $auth.authenticate(provider)
+    .then(() => {
+      $state.go('profile');
+    });
+  }
+
+  vm.authenticate =  authenticate;
 }
