@@ -59,12 +59,18 @@ function TrailsShowCtrl(Trail, $state, TrailComment) {
   vm.deleteComment = deleteComment;
 }
 
-TrailsNewCtrl.$inject = ['Trail', '$state'];
+TrailsNewCtrl.$inject = ['Trail', '$state', '$scope'];
 
-function TrailsNewCtrl(Trail, $state) {
+function TrailsNewCtrl(Trail, $state, $scope) {
   const vm = this;
   vm.trail = {};
   vm.create = trailsCreate;
+  vm.route = [];
+
+  $scope.$watch(() => vm.route, () => {
+
+  }, true);
+
 
   function trailsCreate() {
     if (vm.newForm.$valid) {

@@ -34,7 +34,6 @@ function googleMap() {
 
         const markers = scope.route;
         const otherMarker = markers.slice(1, markers.length -1);
-        console.log(otherMarker);
         const firstMarker = markers[0];
         const lastMarker = markers[markers.length - 1];
 
