@@ -3,6 +3,7 @@ const Trail = require('../models/trail');
 function indexRoute(req, res, next) {
   Trail
     .find()
+    .populate('createdBy')
     .exec()
     .then((trails) => res.json(trails))
     .catch(next);
@@ -19,14 +20,26 @@ function createRoute(req, res, next) {
     .catch(next);
 }
 
-function updateRoute(req, res) {
-  Trail.findByIdAndUpdate(req.params.id, req.body, {
-    new: true,
-    runValidators: true
-  }, (err, trail) => {
-    if (err) return res.status(400).json(err);
-    return res.status(200).json(trail);
-  });
+function updateRoute(req, res, next) {
+
+  if (req.file) req.body.image = req.file.filename;
+
+  req.body.createdBy = req.user.id;
+
+  Trail
+    .findById(req.params.id)
+    .exec()
+    .then((trail) => {
+      if (!trail) return res.notFound();
+
+      for (const field in req.body) {
+        trail[field] = req.body[field];
+      }
+
+      return trail.save();
+    })
+    .then((trail) => res.json(trail))
+    .catch(next);
 }
 
 function showRoute(req, res, next) {
