@@ -52,8 +52,8 @@ User
         image: 'https://www.rspb.org.uk/Images/blue_tit_master_tcm9-17216.jpg?width=530&crop=(0,162,800,612)',
         createdBy: users[0],
         trail: [{
-          lat: 51.5,
-          lng: 0.07
+          lat: 50.926293,
+          lng: -0.975200
         }, {
           lat: 51.5,
           lng: -0.07

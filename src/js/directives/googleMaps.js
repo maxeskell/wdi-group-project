@@ -9,7 +9,8 @@ function googleMap() {
     replace: true,
     template: '<div class="map">GOOGLE MAP HERE</div>',
     scope: {
-      center: '='
+      center: '=',
+      path: '='
     },
     link(scope, element) {
 
@@ -30,6 +31,10 @@ function googleMap() {
           map
         });
       }
+
+
+
+
 
       function destroyMap() {
         console.log('bye map');
