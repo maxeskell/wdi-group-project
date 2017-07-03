@@ -8,10 +8,16 @@
     </div>
     <div class="content">
       <p>Trail name: {{ trailsShow.trail.trailName }}</p>
-      <p>Created by: {{ trailsShow.trail.createdBy.username }}</p>
+      <p><a ui-sref="profile({ id: trailsShow.trail.createdBy.id })">Created by: {{ trailsShow.trail.createdBy.username }}</a></p>
       <p>Trail description: {{ trailsShow.trail.description }}</p>
       <p>Trail difficulty: {{ trailsShow.trail.difficulty }}</p>
+
+      <button ng-click="trailsShow.toggleCompleted()" class="button is-primary is-primary" ng-if="!trailsShow.isComplete()">Mark as completed</button>
+
+      <button ng-click="trailsShow.toggleCompleted()" class="button is-primary is-success" ng-if="trailsShow.isComplete()">Route completed</button>
+
       <button ui-sref="trailsEdit({ id: trailsShow.trail.id })" class="button is-warning" ng-if="main.isAuthenticated() && main.currentUserId === trailsShow.trail.createdBy.id">Edit</button>
+
       <button ng-click="trailsShow.delete()" class="button is-danger" ng-if="main.isAuthenticated() && main.currentUserId === trailsShow.trail.createdBy.id">Delete</button>
     </div>
     <hr>

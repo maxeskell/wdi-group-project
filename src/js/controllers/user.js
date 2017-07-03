@@ -2,17 +2,19 @@ angular
   .module('wildside')
   .controller('ProfileCtrl', ProfileCtrl);
 
-ProfileCtrl.$inject = ['$auth', 'User', '$state'];
+ProfileCtrl.$inject = ['$auth', 'User', '$state', 'Trail'];
 
-function ProfileCtrl($auth, User, $state) {
+function ProfileCtrl($auth, User, $state, Trail) {
   const vm = this;
-
 
   const {
     userId
   } = $auth.getPayload();
 
-  if (userId) vm.user = User.get({
+  vm.trails = Trail.query({ createdBy: $state.params.id});
+
+
+  if(userId) vm.user = User.get({
     id: userId
   });
 

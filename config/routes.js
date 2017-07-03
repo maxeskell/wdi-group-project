@@ -18,21 +18,14 @@ router.route('/trails/:id')
 
 router.route('/users/:id')
   .get(secureRoute, users.show)
-  .post(secureRoute, users.update)
+  .put(secureRoute, imageUpload, users.update)
   .delete(secureRoute, users.delete);
-
 
 router.route('/trails/:id/comments')
   .post(secureRoute, trails.addComment);
 
 router.route('/trails/:id/comments/:commentId')
   .delete(trails.deleteComment);
-
-router.route('/users/:id')
-  .all(secureRoute)
-  .get(users.show)
-  .post(users.update)
-  .delete(users.delete);
 
 router.route('/register')
   .post(imageUpload, auth.register);

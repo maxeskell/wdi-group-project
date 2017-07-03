@@ -7,8 +7,24 @@
 <button ng-if="main.isAuthenticated() && main.currentUserId === profile.user.id" ng-click="profile.delete()" ui-sref="trailsEdit({ id: trailsShow.trail.id })" class="button is-danger">Delete profile</button>
 <button ng-if="main.isAuthenticated() && main.currentUserId === profile.user.id" ng-click="main.logout()" class="button is-primary">Logout</button>
 
+<h2>My trails</h2>
 <div class="column is-10 is-offset-1 ">
-  <div ng-repeat="trail in trailsIndex.all" ng-if="{{ trail.createdBy.username }} === profile.username">
+  <div ng-repeat="trail in profile.trails">
+    <div class="card has-shadow">
+      <div class="card-image">
+        <div class="image" style="background-image:url('{{ trail.imageSRC }}')" ui-sref="trailsShow({ id: trail.id })">
+        </div>
+      </div>
+      <div class="content">
+        <p><a ui-sref="trailsShow({ id: trail.id })">Trail name: {{ trail.trailName }}</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>Trails completed</h2>
+<div class="column is-10 is-offset-1 ">
+  <div ng-repeat="trail in profile.user.trailsCompleted">
     <div class="card has-shadow">
       <div class="card-image">
         <div class="image" style="background-image:url('{{ trail.imageSRC }}')" ui-sref="trailsShow({ id: trail.id })">

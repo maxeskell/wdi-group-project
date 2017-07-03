@@ -22,7 +22,14 @@ const userSchema = new mongoose.Schema({
   postcode: {
     type: String
   },
+  trailsCompleted: [{
+    type: mongoose.Schema.ObjectId,
+    ref: 'Trail'
+  }],
   facebookId: {
+    type: Number
+  },
+  githubId: {
     type: Number
   }
 });

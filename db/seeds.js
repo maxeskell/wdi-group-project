@@ -44,7 +44,8 @@ User
         }, {
           lat: 50.8654529,
           lng: -1.047048
-        }]
+        }],
+        trailsCompleted: []
       }, {
         trailName: 'route 2',
         description: 'route 2 description',
@@ -88,7 +89,8 @@ User
         }, {
           lat: 51.51,
           lng: -0.07
-        }]
+        }],
+        trailsCompleted: []
       }, {
         trailName: 'route 4',
         description: 'route 4 description',
@@ -110,7 +112,8 @@ User
         }, {
           lat: 51.5149,
           lng: -0.0725
-        }]
+        }],
+        trailsCompleted: []
       }, {
         trailName: 'route 5',
         description: 'route 5 description',
@@ -132,7 +135,8 @@ User
         }, {
           lat: 51.51498,
           lng: -0.07253
-        }]
+        }],
+        trailsCompleted: []
       }]);
   })
   .then(trails => console.log(`${trails.length} trails created!`))
