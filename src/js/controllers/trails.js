@@ -24,8 +24,8 @@ function TrailsShowCtrl(Trail, $state, TrailComment, User, $auth) {
   if ($auth.getPayload()) {
     vm.currentUserId = $auth.getPayload().userId;
     User.get({
-        id: vm.currentUserId
-      })
+      id: vm.currentUserId
+    })
       .$promise
       .then((user) => {
         vm.user = user;
