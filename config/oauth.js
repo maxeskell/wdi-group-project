@@ -15,6 +15,4 @@ module.exports = {
     redirect_uri: 'http://localhost:7000/',
     scope: 'email'
   }
-
-
 };
