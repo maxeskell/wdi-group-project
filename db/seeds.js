@@ -27,7 +27,7 @@ User
         trailName: 'route 1',
         description: 'route 1 description',
         difficulty: 1,
-        image: 'https://www.rspb.org.uk/Images/barnowl_tcm9-18232.jpg?width=530&crop=(34,244,962,766)',
+        image: 'http://sites.psu.edu/siowfa14/wp-content/uploads/sites/13467/2014/10/Men-and-Women-walking_cropped.jpg',
         createdBy: users[0],
         route: [{
           lat: 50.8531002,
@@ -50,7 +50,7 @@ User
         trailName: 'route 2',
         description: 'route 2 description',
         difficulty: 2,
-        image: 'https://www.rspb.org.uk/Images/blue_tit_master_tcm9-17216.jpg?width=530&crop=(0,162,800,612)',
+        image: 'http://img.mp.itc.cn/upload/20170314/9052b6c3e8264d8caafa5e89568f76eb_th.jpeg',
         createdBy: users[0],
         route: [{
           lat: 51.78738244272961,
@@ -78,7 +78,7 @@ User
         trailName: 'route 3',
         description: 'route 3 description',
         difficulty: 3,
-        image: 'https://www.rspb.org.uk/Images/chaff_tcm9-17518.jpg?width=530&crop=(176,374,1128,910)',
+        image: 'http://evidencebasedliving.human.cornell.edu/files/2015/01/Walking_for_Health_in_Epsom-5Aug2009_2-286n9rz.jpg',
         createdBy: users[0],
         route: [{
           lat: 51.515,
@@ -101,7 +101,7 @@ User
         trailName: 'route 4',
         description: 'route 4 description',
         difficulty: 4,
-        image: 'https://www.rspb.org.uk/Images/robin_master_tcm9-17658.jpg?width=530&crop=(444,478,1248,930)',
+        image: 'https://images.amcnetworks.com/amc.com/wp-content/uploads/2017/04/the-walking-dead-episode-716-daryl-reedus-800x600-sync-post.jpg',
         createdBy: users[0],
         route: [{
           lat: 51.5151,
@@ -124,7 +124,7 @@ User
         trailName: 'route 5',
         description: 'route 5 description',
         difficulty: 5,
-        image: 'https://www.rspb.org.uk/Images/swallow_tcm9-18469.jpg?width=530&crop=(44,262,948,770)',
+        image: 'http://www.discoversuffolk.org.uk/walking/',
         createdBy: users[0],
         route: [{
           lat: 51.51515,
