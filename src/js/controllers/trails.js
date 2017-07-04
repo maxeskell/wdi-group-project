@@ -96,14 +96,12 @@ TrailsNewCtrl.$inject = ['Trail', '$state', '$scope'];
 
 function TrailsNewCtrl(Trail, $state, $scope) {
   const vm = this;
-  vm.trail = {};
+  vm.trail = { route: [] };
   vm.create = trailsCreate;
-  vm.route = [];
 
   $scope.$watch(() => vm.route, () => {
-
+    console.log(vm.trail);
   }, true);
-
 
   function trailsCreate() {
     if (vm.newForm.$valid) {

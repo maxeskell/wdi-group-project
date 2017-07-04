@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 
 <div class="column is-10 is-offset-1 ">
+  <google-map-index center="{ lat:51.515203, lng: -0.072268 }">
+  MAP GOES HERE
+</google-map-index>
   <div ng-repeat="trail in trailsIndex.all">
     <div class="card has-shadow">
       <div class="card-image">
@@ -10,9 +13,7 @@
       <div class="content">
         <p><a ui-sref="trailsShow({ id: trail.id })">Trail name: {{ trail.trailName }}</a></p>
         <p>Trail difficulty: {{ trail.difficulty }}</p>
-        <div class="map " center="">
-          MAP GOES HERE
-        </div>
+        {{trail.route[0]}}
 
       </div>
     </div>

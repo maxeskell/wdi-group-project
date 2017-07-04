@@ -22,7 +22,8 @@ function googleMapIndex() {
         if(!center) return false;
         map = new google.maps.Map(element[0], {
           zoom: 14,
-          center: center
+          center: center,
+          scrollwheel: false
         });
 
         marker = new google.maps.Marker({

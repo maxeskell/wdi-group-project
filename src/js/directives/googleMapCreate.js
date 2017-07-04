@@ -45,7 +45,6 @@ function googleMapCreate() {
         map.addListener('click', (e) => {
           const position = (e.latLng.toJSON());
           array.push(position);
-          console.log(array);
           poly.setPath(array);
 
 
