@@ -25,9 +25,9 @@ User
     return Trail
       .create([{
         trailName: 'route 1',
-        description: 'route 1 description',
+        description: 'A delightful walk sampling the nature reserves of the Tame Valley near Tamworth, with lots of opportunities for entertainment and refreshment, as well as bird watching. The walk is flat and on made-up paths for the most part',
         difficulty: 1,
-        image: 'https://www.rspb.org.uk/Images/barnowl_tcm9-18232.jpg?width=530&crop=(34,244,962,766)',
+        image: 'http://sites.psu.edu/siowfa14/wp-content/uploads/sites/13467/2014/10/Men-and-Women-walking_cropped.jpg',
         createdBy: users[0],
         route: [{
           lat: 50.8531002,
@@ -48,9 +48,9 @@ User
         trailsCompleted: []
       }, {
         trailName: 'route 2',
-        description: 'route 2 description',
+        description: `This walk is fine, so long as you don't mind people! Kingsbury Water Park was heaving on a warm August Sunday afternoon, as you might expect. NB - point 1: when you briefly emerge from the trees, ignore a right fork and follow the path back into the trees; point 2: the turning into the water park is an inconspicuous footpath to the right of a very conspicuous metal barrier/gate.`,
         difficulty: 2,
-        image: 'https://www.rspb.org.uk/Images/blue_tit_master_tcm9-17216.jpg?width=530&crop=(0,162,800,612)',
+        image: 'http://img.mp.itc.cn/upload/20170314/9052b6c3e8264d8caafa5e89568f76eb_th.jpeg',
         createdBy: users[0],
         route: [{
           lat: 51.78738244272961,
@@ -76,13 +76,13 @@ User
         }]
       }, {
         trailName: 'route 3',
-        description: 'route 3 description',
+        description: `Walk 23 of a series of routes along Warwickshire's Centenary Way. Starting from the scenic Shustoke reservoirs and climbing gradually to some remote high ground with some remarkable extensive views over the West Midlands.`,
         difficulty: 3,
-        image: 'https://www.rspb.org.uk/Images/chaff_tcm9-17518.jpg?width=530&crop=(176,374,1128,910)',
+        image: 'http://evidencebasedliving.human.cornell.edu/files/2015/01/Walking_for_Health_in_Epsom-5Aug2009_2-286n9rz.jpg',
         createdBy: users[0],
         route: [{
           lat: 51.515,
-          lng: 0.072
+          lng: -0.072
         }, {
           lat: 51.51,
           lng: -0.07
@@ -99,13 +99,13 @@ User
         trailsCompleted: []
       }, {
         trailName: 'route 4',
-        description: 'route 4 description',
+        description: 'An enjoyable short walk around the parish of Fillongley in the north Warwickshire Countryside. This walk is a waymarked circular route designed as part of the North Arden Heritage trail.',
         difficulty: 4,
-        image: 'https://www.rspb.org.uk/Images/robin_master_tcm9-17658.jpg?width=530&crop=(444,478,1248,930)',
+        image: 'https://images.amcnetworks.com/amc.com/wp-content/uploads/2017/04/the-walking-dead-episode-716-daryl-reedus-800x600-sync-post.jpg',
         createdBy: users[0],
         route: [{
           lat: 51.5151,
-          lng: 0.0720
+          lng: -0.0720
         }, {
           lat: 51.5162,
           lng: -0.0763
@@ -122,25 +122,25 @@ User
         trailsCompleted: []
       }, {
         trailName: 'route 5',
-        description: 'route 5 description',
-        difficulty: 5,
-        image: 'https://www.rspb.org.uk/Images/swallow_tcm9-18469.jpg?width=530&crop=(44,262,948,770)',
+        description: 'Lovely walk for the dead.  Those that are alive - beware....',
+        difficulty: 4,
+        image: 'https://www.thesnipenews.com/wp-content/gallery/zombie-walk-2016/zombie-walk-2016-01.jpg',
         createdBy: users[0],
         route: [{
-          lat: 51.51515,
-          lng: 0.07201
+          lat: 51.5151,
+          lng: -0.0720
         }, {
-          lat: 51.51627,
-          lng: -0.07637
+          lat: 51.5162,
+          lng: -0.0763
         }, {
-          lat: 51.51627,
-          lng: -0.07637
+          lat: 51.5162,
+          lng: -0.0763
         }, {
-          lat: 51.51450,
-          lng: -0.07396
+          lat: 51.514504,
+          lng: -0.0739
         }, {
-          lat: 51.51498,
-          lng: -0.07253
+          lat: 51.5149,
+          lng: -0.0725
         }],
         trailsCompleted: []
       }]);
