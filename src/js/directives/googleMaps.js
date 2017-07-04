@@ -22,7 +22,6 @@ function googleMap() {
 
 
       scope.$watch('center', initMap);
-      scope.$on('$destroy', destroyMap);
 
       function initMap(center) {
         if (!center) return false;
@@ -73,17 +72,6 @@ function googleMap() {
 
         });
 
-      }
-
-
-
-
-
-      function destroyMap() {
-        console.log('bye map');
-        marker.setMap(null);
-        marker = null;
-        map = null;
       }
     }
   };

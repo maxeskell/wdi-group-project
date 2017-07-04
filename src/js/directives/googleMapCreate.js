@@ -1,8 +1,8 @@
 /* global google */
 
 angular
-  .module('wildside')
-  .directive('googleMapCreate', googleMapCreate);
+.module('wildside')
+.directive('googleMapCreate', googleMapCreate);
 
 function googleMapCreate() {
   return {
@@ -16,11 +16,11 @@ function googleMapCreate() {
     link(scope, element) {
 
       let map = null;
-      let marker = null;
+      // let marker = null;
       let poly = null;
 
       scope.$watch('center', initMap);
-      scope.$on('$destroy', destroyMap);
+
 
       function initMap(center) {
         if (!center) return false;
@@ -29,6 +29,17 @@ function googleMapCreate() {
           center: center
         });
 
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+
+            map.setCenter(pos);
+          });
+        }
 
         const array = [];
 
@@ -61,12 +72,6 @@ function googleMapCreate() {
       }
 
 
-      function destroyMap() {
-        console.log('bye map');
-        marker.setMap(null);
-        marker = null;
-        map = null;
-      }
     }
   };
 }
