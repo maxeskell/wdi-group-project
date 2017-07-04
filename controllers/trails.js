@@ -56,6 +56,7 @@ function showRoute(req, res, next) {
 }
 
 function deleteRoute(req, res, next) {
+  console.log('Arrived in deleteRoute');
   Trail
     .findById(req.params.id)
     .exec()

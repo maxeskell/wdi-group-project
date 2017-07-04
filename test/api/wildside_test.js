@@ -36,8 +36,8 @@ describe('Trail tests', () => {
               difficulty: 1,
               image: 'https://www.rspb.org.uk/Images/barnowl_tcm9-18232.jpg?width=530&crop=(34,244,962,766)',
               createdBy: user,
-              trailsCompleted: [null],
-              comments: [null],
+              trailsCompleted: [],
+              comments: [],
               route: [{
                 lat: 50.8531002,
                 lng: -1.0619831
@@ -191,6 +191,8 @@ describe('Trail tests', () => {
           difficulty: 1,
           image: 'https://www.rspb.org.uk/Images/barnowl_tcm9-18232.jpg?width=530&crop=(34,244,962,766)',
           createdBy: user,
+          trailsCompleted: [],
+          comments: [],
           route: [{
             lat: 50.8531002,
             lng: -1.0619831
@@ -233,6 +235,8 @@ describe('Trail tests', () => {
               difficulty: 1,
               image: 'https://www.rspb.org.uk/Images/barnowl_tcm9-18232.jpg?width=530&crop=(34,244,962,766)',
               createdBy: user,
+              trailsCompleted: [],
+              comments: [],
               route: [{
                 lat: 50.8531002,
                 lng: -1.0619831
@@ -284,6 +288,8 @@ describe('Trail tests', () => {
               difficulty: 1,
               image: 'https://www.rspb.org.uk/Images/barnowl_tcm9-18232.jpg?width=530&crop=(34,244,962,766)',
               createdBy: user,
+              trailsCompleted: [],
+              comments: [],
               route: [{
                 lat: 50.8531002,
                 lng: -1.0619831
@@ -339,12 +345,15 @@ describe('Trail tests', () => {
     });
 
     it('should return a 204 response', done => {
+
       Trail.create({
         trailName: 'route 1',
         description: 'route 1 description',
         difficulty: 1,
         image: 'https://www.rspb.org.uk/Images/barnowl_tcm9-18232.jpg?width=530&crop=(34,244,962,766)',
         createdBy: user,
+        trailsCompleted: [],
+        comments: [],
         route: [{
           lat: 50.8531002,
           lng: -1.0619831
@@ -361,12 +370,12 @@ describe('Trail tests', () => {
           lat: 50.8654529,
           lng: -1.047048
         }]
-      }), (err, trail) => {
+      }, (err, trail) => {
         api.delete(`/api/trails/${trail.id}`)
           .set('Accept', 'application/json')
           .set('Authorization', `Bearer ${token}`)
           .expect(204, done);
-      };
+      });
     });
   });
 
