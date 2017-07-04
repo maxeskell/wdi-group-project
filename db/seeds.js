@@ -17,7 +17,7 @@ User
     email: 'max@sam',
     password: 'password',
     passwordConfirmation: 'password',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/d/d3/Fischotter%2C_Lutra_Lutra.JPG',
+    image: 'http://www.dumpaday.com/wp-content/uploads/2013/02/funny-otter-pictures1.jpg',
     postcode: 'B461QR'
   }])
   .then((users) => {
