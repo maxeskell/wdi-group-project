@@ -1,4 +1,4 @@
-  {
+{
   "name": "angular-gulp-setup",
   "description": "A example stack with gulp and angular",
   "main": "index.js",
@@ -22,6 +22,6 @@
     "satellizer": "^0.15.5"
   },
   "resolutions": {
-    "angular": "1.6.4"
+    "angular": "1.6.5"
   }
 }
