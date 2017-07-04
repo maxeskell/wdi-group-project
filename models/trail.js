@@ -34,8 +34,14 @@ const trailSchema = new mongoose.Schema({
     ref: 'User',
     required: true
   },
+<<<<<<< HEAD
+  route: [],
+  comments: [commentSchema],
+  trailsCompleted: []
+=======
   route: [{}],
   comments: [commentSchema]
+>>>>>>> ffcbc40ce91651c6eeb8ccaeeb1a160436df59ea
 });
 
 trailSchema

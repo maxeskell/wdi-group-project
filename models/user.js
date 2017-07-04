@@ -47,7 +47,7 @@ userSchema
   });
 
 userSchema.pre('validate', function checkPassword(next) {
-  if (!this.password && !this.facebookId) {
+  if (!this.password && !this.facebookId && !this.githubId) {
     this.invalidate('password', 'required');
   }
   if (this.isModified('password') && this._passwordConfirmation !== this.password) {

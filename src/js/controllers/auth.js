@@ -18,6 +18,15 @@ function RegisterCtrl($auth, $state) {
   }
 
   vm.submit = submit;
+
+  function authenticate(provider) {
+    $auth.authenticate(provider)
+      .then(() => {
+        $state.go('trailsIndex');
+      });
+  }
+
+  vm.authenticate = authenticate;
 }
 
 LoginCtrl.$inject = ['$auth', '$state'];
