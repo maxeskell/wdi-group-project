@@ -249,7 +249,10 @@ describe('Trail tests', () => {
                 lat: 50.8654529,
                 lng: -1.047048
               }]
-            }, done);
+            }, (err, _trail) => {
+              trail = _trail;
+              done();
+            });
         });
     });
 
@@ -260,7 +263,7 @@ describe('Trail tests', () => {
     });
   });
 
-  xdescribe('DELETE /api/trails/:id without token', () => {
+  describe('DELETE /api/trails/:id without token', () => {
 
     let trail;
     beforeEach(done => {
@@ -297,7 +300,10 @@ describe('Trail tests', () => {
                 lat: 50.8654529,
                 lng: -1.047048
               }]
-            }, done);
+            }, (err, _trail) => {
+              trail = _trail;
+              done();
+            });
         });
     });
 
@@ -309,7 +315,9 @@ describe('Trail tests', () => {
 
   });
 
-  xdescribe('DELETE /api/trails/:id with token', () => {
+  describe('DELETE /api/trails/:id with token', () => {
+
+    let user;
 
     beforeEach(done => {
       User.create({
@@ -319,9 +327,10 @@ describe('Trail tests', () => {
         passwordConfirmation: 'password',
         image: 'https://upload.wikimedia.org/wikipedia/commons/d/d3/Fischotter%2C_Lutra_Lutra.JPG',
         postcode: 'B461QR'
-      }, (err, user) => {
+      }, (err, _user) => {
+        user = _user;
         token = jwt.sign({
-          userId: user.id
+          userId: _user.id
         }, secret, {
           expiresIn: 60 * 60 * 24
         });
