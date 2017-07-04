@@ -312,7 +312,6 @@ describe('Trail tests', () => {
             });
         });
     });
-
     it('should return a 401 response', done => {
       api.delete(`/api/trails/${trail.id}`)
         .set('Accept', 'application/json')
