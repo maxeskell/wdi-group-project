@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <div class="column is-10 is-offset-1 ">
-  <google-map-index center="{ lat:51.515203, lng: -0.072268 }">
+  <google-map-index center="{ lat: 51.533309, lng: -0.105317 }" trails="trailsIndex.starts">
   MAP GOES HERE
 </google-map-index>
   <div ng-repeat="trail in trailsIndex.all">
@@ -13,8 +13,6 @@
       <div class="content">
         <p><a ui-sref="trailsShow({ id: trail.id })">Trail name: {{ trail.trailName }}</a></p>
         <p>Trail difficulty: {{ trail.difficulty }}</p>
-        {{trail.route[0]}}
-
       </div>
     </div>
   </div>
