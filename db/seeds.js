@@ -29,6 +29,8 @@ User
         difficulty: 1,
         image: 'http://sites.psu.edu/siowfa14/wp-content/uploads/sites/13467/2014/10/Men-and-Women-walking_cropped.jpg',
         createdBy: users[0],
+        length: 5.5,
+        time: '01:45',
         route: [{
           lat: 51.8531002,
           lng: -1.0619831
@@ -52,6 +54,8 @@ User
         difficulty: 2,
         image: 'http://img.mp.itc.cn/upload/20170314/9052b6c3e8264d8caafa5e89568f76eb_th.jpeg',
         createdBy: users[0],
+        length: 5.5,
+        time: '01:45',
         route: [{
           lat: 51.78738244272961,
           lng: 0.010471343994140625
@@ -80,6 +84,8 @@ User
         difficulty: 3,
         image: 'http://evidencebasedliving.human.cornell.edu/files/2015/01/Walking_for_Health_in_Epsom-5Aug2009_2-286n9rz.jpg',
         createdBy: users[0],
+        length: 5.5,
+        time: '01:45',
         route: [{
           lat: 51.515,
           lng: -0.072
@@ -103,6 +109,8 @@ User
         difficulty: 4,
         image: 'https://images.amcnetworks.com/amc.com/wp-content/uploads/2017/04/the-walking-dead-episode-716-daryl-reedus-800x600-sync-post.jpg',
         createdBy: users[0],
+        length: 5.5,
+        time: '01:45',
         route: [{
           lat: 51.5151,
           lng: -0.0720
@@ -126,6 +134,8 @@ User
         difficulty: 4,
         image: 'https://www.thesnipenews.com/wp-content/gallery/zombie-walk-2016/zombie-walk-2016-01.jpg',
         createdBy: users[0],
+        length: 5.5,
+        time: '01:45',
         route: [{
           lat: 51.5151,
           lng: -0.0720
