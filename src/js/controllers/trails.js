@@ -140,17 +140,21 @@ TrailsEditCtrl.$inject = ['$state', 'Trail'];
 
 function TrailsEditCtrl($state, Trail) {
   const vm = this;
-  vm.trail = {};
   vm.update = trailsUpdate;
+  vm.trail ={};
 
   trailsShow();
 
   function trailsShow() {
+
+
     Trail
     .get($state.params)
     .$promise
     .then((trail) => {
       vm.trail = trail;
+      vm.trail.oldRoute = vm.trail.route;
+      vm.trail.route = [];
     });
   }
 
