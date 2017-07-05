@@ -1,14 +1,11 @@
 // Import all of your scss files here
-
 // Variables
 $color1: #D8CAA8;
 $color2: #5C832F;
 $color3: #284907;
 $color4: #382513;
 $color5: #363942;
-
-$fontStack: karla, sans-serif;;
-
+$fontStack: karla, sans-serif;
 // Extends
 .title-styles {
   font-weight: 600;
@@ -16,25 +13,34 @@ $fontStack: karla, sans-serif;;
   letter-spacing: 2px;
   color: $color3;
 }
-
 // Styles
 body {
   font-family: $fontStack;
   font-weight: 300;
   background-color: $color1;
   height: 100vh;
+  &.home {
+    background-image: url('http://www.deerfields.ca/wp-content/uploads/2015/10/family-walking-down-path.jpg');
+    background-size: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
   &.trailsIndex {
     height: 100%;
   }
+
   &.trailsShow {
     height: 100%;
   }
+
   &.trailsNew {
     height: 100%;
-  }
+  }gu
+
   &.trailsEdit {
     height: 100%;
   }
+
   &.profile {
     height: 100%;
   }
@@ -43,10 +49,12 @@ body {
 nav {
   font-family: 'Gloria Hallelujah', cursive;
   padding: 10px;
+
   .mainTitle {
     font-size: 35px;
     text-transform: uppercase;
   }
+
   .nav-center {
     .nav-item {
       font-size: 25px;
@@ -54,7 +62,14 @@ nav {
   }
 }
 
-.card-image{
+.card  {
+  background-color: $color5;
+  img {
+    background-size: cover;
+  }
+}
+
+.card-image {
   margin: 20px 0;
 }
 
@@ -63,7 +78,6 @@ nav {
   background-repeat: no-repeat;
   width: 600px;
   margin: 0 auto;
-
 }
 
 .map {
@@ -71,7 +85,6 @@ nav {
   height: 500px;
   margin: 20px auto;
   padding: 20px;
-
 }
 
 .facebook {
