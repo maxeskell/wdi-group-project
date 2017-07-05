@@ -23,7 +23,7 @@ function googleMapIndex() {
       function initMap(center) {
         if(!center) return false;
         map = new google.maps.Map(element[0], {
-          zoom: 8,
+          zoom: 7,
           center: center,
           scrollwheel: false
         });

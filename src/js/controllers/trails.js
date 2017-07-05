@@ -25,11 +25,11 @@ function TrailsShowCtrl(Trail, $state, TrailComment, User, $auth, $http) {
   vm.trail = [];
 
   Trail.get($state.params)
-    .$promise
-    .then((data) => {
-      vm.trail = data;
-      getWeather();
-    });
+  .$promise
+  .then((data) => {
+    vm.trail = data;
+    getWeather();
+  });
 
   if ($auth.getPayload()) {
     vm.currentUserId = $auth.getPayload().userId;
@@ -105,10 +105,10 @@ function TrailsShowCtrl(Trail, $state, TrailComment, User, $auth, $http) {
     const { lat, lng } = vm.trail.route[0];
 
     $http
-      .get('/api/weather', { params: { lat, lng } })
-      .then((response) => {
-        vm.weather = response.data;
-      });
+    .get('/api/weather', { params: { lat, lng } })
+    .then((response) => {
+      vm.weather = response.data;
+    });
 
   }
 }
