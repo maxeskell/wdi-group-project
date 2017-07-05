@@ -3,8 +3,8 @@ module.exports = {
     loginURL: 'https://github.com/login/oauth/authorize',
     accessTokenURL: 'https://github.com/login/oauth/access_token',
     profileURL: 'https://api.github.com/user',
-    client_id: process.env.GITHUB_ID_GROUP_PROJECT,
-    client_secret: process.env.GITHUB_CLIENT__SECRET_GROUP_PROJECT,
+    clientId: process.env.GITHUB_ID_GROUP_PROJECT,
+    clientSecret: process.env.GITHUB_CLIENT__SECRET_GROUP_PROJECT,
     scope: 'user:email'
   },
   facebook: {
