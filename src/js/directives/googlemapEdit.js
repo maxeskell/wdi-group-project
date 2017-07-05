@@ -17,7 +17,7 @@ function googleMapEdit() {
     link(scope, element) {
 
       let map = null;
-      let marker = null;
+      // let marker = null;
       let poly = null;
       let oldPoly = null;
 
@@ -31,6 +31,8 @@ function googleMapEdit() {
           scrollwheel: false
         });
         console.log('Scope oldRoute:', oldRoute);
+        console.log(scope.route);
+        console.log(scope);
 
         oldPoly = new google.maps.Polyline({
           path: oldRoute,

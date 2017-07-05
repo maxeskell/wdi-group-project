@@ -159,6 +159,7 @@ function TrailsEditCtrl($state, Trail) {
       vm.trail = trail;
       vm.trail.oldRoute = vm.trail.route;
       vm.trail.route = [];
+
     });
   }
 
@@ -170,4 +171,5 @@ function TrailsEditCtrl($state, Trail) {
       $state.go('trailsShow', $state.params);
     });
   }
+  
 }
