@@ -9,13 +9,8 @@ TrailsIndexCtrl.$inject = ['Trail'];
 
 function TrailsIndexCtrl(Trail) {
   const vm = this;
-  vm.starts = [];
 
-  vm.all = Trail.query((data) => {
-    for(let i = 0; i < data.length; i++) {
-      vm.starts = vm.starts.concat(data[i].route[0]);
-    }
-  });
+  vm.all = Trail.query();
 
 }
 

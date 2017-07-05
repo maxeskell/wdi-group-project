@@ -15,6 +15,7 @@ function googleMapIndex() {
     link(scope, element) {
 
       let map = null;
+      let infowindow = null;
 
       scope.$watch('center', initMap);
 
@@ -46,12 +47,34 @@ function googleMapIndex() {
           });
         }
 
+
         function addMarker(trail){
-          marker = new google.maps.Marker({
-            position: trail,
+          const marker = new google.maps.Marker({
+            position: trail.route[0],
             map
           });
+
+
+          marker.addListener('click', () => {
+            if(infowindow) infowindow.close();
+            console.log(trail.id);
+
+            infowindow = new google.maps.InfoWindow({
+              content: `
+                <h1><a href="/trails/${trail.id}">${trail.trailName}</a></h1>
+                <p>${trail.description}</p>
+              `
+            });
+
+            infowindow.open(map, marker);
+          });
+
         }
+
+
+
+
+
       }
 
     }
