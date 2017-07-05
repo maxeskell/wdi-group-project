@@ -35,7 +35,7 @@ body {
 
   &.trailsNew {
     height: 100%;
-  }
+  }gu
 
   &.trailsEdit {
     height: 100%;
@@ -59,6 +59,13 @@ nav {
     .nav-item {
       font-size: 25px;
     }
+  }
+}
+
+.card  {
+  background-color: $color5;
+  img {
+    background-size: cover;
   }
 }
 
