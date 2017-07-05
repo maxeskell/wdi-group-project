@@ -26,7 +26,7 @@ function googleMap() {
       function initMap(center) {
         if (!center) return false;
         map = new google.maps.Map(element[0], {
-          zoom: 14,
+          zoom: 10,
           center: center,
           scrollwheel: false
         });
@@ -40,6 +40,9 @@ function googleMap() {
         const bounds = new google.maps.LatLngBounds();
         bounds.extend(firstMarker);
         bounds.extend(lastMarker);
+        bounds.extend(otherMarker[1]);
+        bounds.extend(otherMarker[0]);
+        bounds.extend(otherMarker[2]);
         map.fitBounds(bounds);
 
 
