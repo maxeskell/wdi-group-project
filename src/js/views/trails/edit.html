@@ -6,7 +6,7 @@
     <form name="trailsEdit.editForm" ng-submit="trailsEdit.update()" novalidate>
 
       <div class="field">
-        <p class="control">
+        <p class="control has-icons-left">
           <label class="label" for="image">Image</label>
           <input class="input" base64 type="file" name="base64" id="image" ng-model="trailsEdit.trail.base64" required>
           <div ng-messages="trailsEdit.editForm.base64.$error" role="alert" ng-show="(trailsEdit.editForm.$submitted || trailsEdit.editForm.base64.$touched) && trailsEdit.editForm.base64.$invalid" class="error">
@@ -36,8 +36,7 @@
       </div>
 
       <div class="field">
-        <p class="control">
-          <label class="label" for="difficulty">Trail difficulty</label>
+        <p class="control has-icons-left">
           <span class="select is full-width">
             <select name="difficulty" id="difficulty" ng-model="trailsEdit.trail.difficulty" required>
               <option>Trail Difficulty</option>
