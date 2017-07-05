@@ -17,35 +17,33 @@ $fontStack: karla, sans-serif;
 body {
   font-family: $fontStack;
   font-weight: 300;
-  background-image: url('http://www.deerfields.ca/wp-content/uploads/2015/10/family-walking-down-path.jpg');
-  background-size: 100%;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
+  background-color: $color1;
   height: 100vh;
 
+  &.home {
+    background-image: url('http://www.deerfields.ca/wp-content/uploads/2015/10/family-walking-down-path.jpg');
+    background-size: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
   &.trailsIndex {
     height: 100%;
-    background-color: $color1;
   }
 
   &.trailsShow {
     height: 100%;
-    background-color: $color1;
   }
 
   &.trailsNew {
     height: 100%;
-    background-color: $color1;
   }
 
   &.trailsEdit {
     height: 100%;
-    background-color: $color1;
   }
 
   &.profile {
     height: 100%;
-    background-color: $color1;
   }
 }
 
