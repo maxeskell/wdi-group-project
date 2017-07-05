@@ -29,6 +29,12 @@ const trailSchema = new mongoose.Schema({
   image: {
     type: String
   },
+  length: {
+    type: Number
+  },
+  time: {
+    type: String
+  },
   createdBy: {
     type: mongoose.Schema.ObjectId,
     ref: 'User',

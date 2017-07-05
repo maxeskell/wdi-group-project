@@ -107,7 +107,6 @@ function TrailsShowCtrl(Trail, $state, TrailComment, User, $auth, $http) {
     $http
       .get('/api/weather', { params: { lat, lng } })
       .then((response) => {
-        console.log(response);
         vm.weather = response.data;
       });
 
@@ -118,12 +117,17 @@ TrailsNewCtrl.$inject = ['Trail', '$state', '$scope'];
 
 function TrailsNewCtrl(Trail, $state, $scope) {
   const vm = this;
-  vm.trail = { route: [] };
+  vm.trail = { route: [], length: null, time: null  };
   vm.create = trailsCreate;
 
   $scope.$watch(() => vm.route, () => {
-    console.log(vm.trail);
   }, true);
+  $scope.$watch(() => vm.length, () => {
+  }, true);
+  $scope.$watch(() => vm.time, () => {
+  }, true);
+
+  console.log(vm.trail);
 
   function trailsCreate() {
     if (vm.newForm.$valid) {

@@ -62,7 +62,8 @@ function googleMapIndex() {
             infowindow = new google.maps.InfoWindow({
               content: `
                 <h1><a href="/trails/${trail.id}">${trail.trailName}</a></h1>
-                <p>${trail.description}</p>
+                <p>${trail.length} (Km)</p>
+                <p>${trail.time} (hh:mm)</p>
               `
             });
 

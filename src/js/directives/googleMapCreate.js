@@ -11,7 +11,9 @@ function googleMapCreate() {
     template: '<div class="map">GOOGLE MAP HERE</div>',
     scope: {
       center: '=',
-      path: '='
+      path: '=',
+      length: '=',
+      time: '='
     },
     link(scope, element) {
 
@@ -51,9 +53,6 @@ function googleMapCreate() {
         });
         poly.setMap(map);
 
-
-
-
         map.addListener('click', (e) => {
           const position = (e.latLng.toJSON());
           array.push(position);
@@ -62,16 +61,22 @@ function googleMapCreate() {
 
           scope.path.push(position);
           scope.$apply();
+          scope.length = (google.maps.geometry.spherical.computeLength(poly.getPath())/1000).toPrecision(3);
+          const decimalTimeString = (scope.length /4);
+          var n = new Date(0,0);
+          n.setSeconds(+decimalTimeString * 60 * 60);
+          scope.time = n.toTimeString().slice(0, 5);
+          console.log('poly length', scope.length);
+          console.log('time', scope.time);
+          scope.$apply();
 
           new google.maps.Marker({
             position,
             map
 
-
           });
         });
       }
-
 
     }
   };
