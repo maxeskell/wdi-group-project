@@ -11,47 +11,48 @@ function googleMapEdit() {
     template: '<div class="map">GOOGLE MAP HERE</div>',
     scope: {
       center: '=',
-      path: '='
+      route: '=',
+      oldRoute: '='
     },
     link(scope, element) {
 
       let map = null;
-      // let marker = null;
+      let marker = null;
       let poly = null;
+      let oldPoly = null;
 
-      scope.$watch('center', initMap);
+      scope.$watch('oldRoute', initMap, true);
 
-
-      function initMap(center) {
-        if (!center) return false;
+      function initMap(oldRoute) {
+        if (!oldRoute) return false;
         map = new google.maps.Map(element[0], {
           zoom: 14,
-          center: center,
+          center: oldRoute[0],
           scrollwheel: false
         });
+        console.log('Scope oldRoute:', oldRoute);
 
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            var pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
-
-
-            map.setCenter(pos);
-          });
-        }
-
-        var originalRouteCoordinates = scope.route;
-        var oldPath = new google.maps.Polyline({
-          path: originalRouteCoordinates,
-          geodesic: true,
+        oldPoly = new google.maps.Polyline({
+          path: oldRoute,
           strokeColor: '#FF0000',
           strokeOpacity: 1.0,
           strokeWeight: 2
         });
 
-        oldPath.setMap(map);
+        oldPoly.setMap(map);
+
+        const markers = scope.oldRoute;
+        const otherMarker = markers.slice(1, markers.length - 1);
+        const firstMarker = markers[0];
+        const lastMarker = markers[markers.length - 1];
+
+        const bounds = new google.maps.LatLngBounds();
+        bounds.extend(firstMarker);
+        bounds.extend(lastMarker);
+        bounds.extend(otherMarker[1]);
+        bounds.extend(otherMarker[0]);
+        bounds.extend(otherMarker[2]);
+        map.fitBounds(bounds);
 
 
         const array = [];
@@ -63,16 +64,13 @@ function googleMapEdit() {
         });
         poly.setMap(map);
 
-
-
-
         map.addListener('click', (e) => {
           const position = (e.latLng.toJSON());
           array.push(position);
           poly.setPath(array);
 
 
-          scope.path.push(position);
+          scope.route.push(position);
           scope.$apply();
 
           new google.maps.Marker({
@@ -81,6 +79,8 @@ function googleMapEdit() {
 
 
           });
+
+
         });
       }
 
