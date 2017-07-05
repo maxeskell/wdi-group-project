@@ -30,19 +30,19 @@ User
         image: 'http://sites.psu.edu/siowfa14/wp-content/uploads/sites/13467/2014/10/Men-and-Women-walking_cropped.jpg',
         createdBy: users[0],
         route: [{
-          lat: 50.8531002,
+          lat: 51.8531002,
           lng: -1.0619831
         }, {
-          lat: 50.86339441,
+          lat: 51.86339441,
           lng: -1.06395721
         }, {
-          lat: 50.86767395,
+          lat: 51.86767395,
           lng: -1.05803489
         }, {
-          lat: 50.86642804,
+          lat: 51.86642804,
           lng: -1.05254173
         }, {
-          lat: 50.8654529,
+          lat: 51.8654529,
           lng: -1.047048
         }],
         trailsCompleted: []

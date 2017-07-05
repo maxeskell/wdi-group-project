@@ -1,7 +1,7 @@
 /* global google */
 angular
-      .module('wildside')
-      .directive('googleMapIndex', googleMapIndex);
+.module('wildside')
+.directive('googleMapIndex', googleMapIndex);
 
 function googleMapIndex() {
   return {
@@ -9,35 +9,51 @@ function googleMapIndex() {
     replace: true,
     template: '<div class="map">GOOGLE MAP HERE</div>',
     scope: {
-      center: '='
+      center: '=',
+      trails: '='
     },
     link(scope, element) {
 
       let map = null;
-      let marker = null;
 
       scope.$watch('center', initMap);
-      scope.$on('$destroy', destroyMap);
+
+
       function initMap(center) {
         if(!center) return false;
         map = new google.maps.Map(element[0], {
-          zoom: 14,
+          zoom: 8,
           center: center,
           scrollwheel: false
         });
+        scope.$watch('trails', addMarkers, true);
 
-        marker = new google.maps.Marker({
-          position: center,
-          map
-        });
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+
+            map.setCenter(pos);
+          });
+        }
+
+        function addMarkers(trails) {
+          trails.forEach((trail) => {
+            addMarker(trail);
+          });
+        }
+
+        function addMarker(trail){
+          marker = new google.maps.Marker({
+            position: trail,
+            map
+          });
+        }
       }
 
-      function destroyMap() {
-        console.log('bye map');
-        marker.setMap(null);
-        marker = null;
-        map = null;
-      }
     }
   };
 }
