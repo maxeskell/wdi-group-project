@@ -5,6 +5,7 @@ const auth = require('../controllers/auth');
 const oauth = require('../controllers/oauth');
 const imageUpload = require('../lib/imageUpload');
 const secureRoute = require('../lib/secureRoute');
+const darksky = require('../controllers/darksky');
 
 router.route('/trails')
   .get(trails.index)
@@ -38,6 +39,11 @@ router.route('/oauth/github')
 
 router.route('/oauth/facebook')
   .post(oauth.facebook);
+
+router.route('/weather')
+  .get(darksky.weather);
+
+
 
 //catch all for errors
 router.all('*', (req, res) => res.notFound());

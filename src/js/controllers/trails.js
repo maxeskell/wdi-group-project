@@ -20,13 +20,22 @@ function TrailsIndexCtrl(Trail) {
 }
 
 
-TrailsShowCtrl.$inject = ['Trail', '$state', 'TrailComment', 'User', '$auth'];
+TrailsShowCtrl.$inject = ['Trail', '$state', 'TrailComment', 'User', '$auth', '$http'];
 
-function TrailsShowCtrl(Trail, $state, TrailComment, User, $auth) {
+function TrailsShowCtrl(Trail, $state, TrailComment, User, $auth, $http) {
   const vm = this;
   vm.newComment = {};
   vm.user = {};
-  vm.trail = Trail.get($state.params);
+
+  vm.trail = [];
+
+  Trail.get($state.params)
+    .$promise
+    .then((data) => {
+      vm.trail = data;
+      getWeather();
+    });
+
   if ($auth.getPayload()) {
     vm.currentUserId = $auth.getPayload().userId;
     User.get({
@@ -96,6 +105,18 @@ function TrailsShowCtrl(Trail, $state, TrailComment, User, $auth) {
   }
 
   vm.deleteComment = deleteComment;
+
+  function getWeather() {
+    const { lat, lng } = vm.trail.route[0];
+
+    $http
+      .get('/api/weather', { params: { lat, lng } })
+      .then((response) => {
+        console.log(response);
+        vm.weather = response.data;
+      });
+
+  }
 }
 
 TrailsNewCtrl.$inject = ['Trail', '$state', '$scope'];
