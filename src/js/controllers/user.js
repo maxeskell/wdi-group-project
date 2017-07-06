@@ -6,19 +6,10 @@ ProfileCtrl.$inject = ['$auth', 'User', '$state', 'Trail'];
 
 function ProfileCtrl($auth, User, $state, Trail) {
   const vm = this;
-  // vm.user = User.get($state.params);
-
-  const {
-    userId
-  } = $auth.getPayload();
+  vm.user = User.get($state.params);
 
   vm.trails = Trail.query({
     createdBy: $state.params.id
-  });
-
-
-  if (userId) vm.user = User.get({
-    id: userId
   });
 
   vm.logout = logout;

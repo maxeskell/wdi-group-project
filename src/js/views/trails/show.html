@@ -18,12 +18,9 @@
   <img src="images/{{ trailsShow.weather.icon }}.svg" alt="{{ trailsShow.weather.icon }}">
   <h3>Created by: <a ui-sref="profile({ id: trailsShow.trail.createdBy.id })"> <strong>{{ trailsShow.trail.createdBy.username }}</strong></a></h3>
   <button ng-click="trailsShow.toggleCompleted()" class="button is-success is-half" ng-if="main.isAuthenticated() && !trailsShow.isComplete()">Mark as completed</button>
+  <button ng-click="trailsShow.toggleCompleted()" class="button is-primary is-success" ng-if="trailsShow.isComplete()">Route completed</button>
 
   <hr>
-
-
-
-  <button ng-click="trailsShow.toggleCompleted()" class="button is-primary is-success" ng-if="trailsShow.isComplete()">Route completed</button>
 
   <button ui-sref="trailsEdit({ id: trailsShow.trail.id })" class="button is-warning" ng-if="main.isAuthenticated() && main.currentUserId === trailsShow.trail.createdBy.id">Edit</button>
 
