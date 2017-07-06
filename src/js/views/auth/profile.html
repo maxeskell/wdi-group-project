@@ -3,40 +3,47 @@
 <div class="column is-half is-offset-one-quarter">
 
   <div class="field">
-    <img ng-src="{{ profile.user.image }}" alt="profile.user.username">
-    <h2>Username:  {{ profile.user.username }}</h2>
-    <h3 ng-if="main.isAuthenticated() && main.currentUserId === profile.user.id && profile.user.email">Email:  {{ profile.user.email }}</h3>
+    <div class="content">
+      <h2 class="title is-1">{{ profile.user.username }}</h2>
+      <img class="image profileimage" ng-src="{{ profile.user.image }}" alt="profile.user.username">
 
-    <button ng-if="main.isAuthenticated() && main.currentUserId === profile.user.id" ng-click="profile.delete()" ui-sref="trailsEdit({ id: trailsShow.trail.id })" class="button is-danger">Delete profile</button>
-    <button ng-if="main.isAuthenticated() && main.currentUserId === profile.user.id" ng-click="main.logout()" class="button is-primary">Logout</button>
+      <h3 ng-if="main.isAuthenticated() && main.currentUserId === profile.user.id && profile.user.email">Email:  {{ profile.user.email }}</h3>
+
+      <button ng-if="main.isAuthenticated() && main.currentUserId === profile.user.id" ng-click="profile.delete()" ui-sref="trailsEdit({ id: trailsShow.trail.id })" class="button is-danger">Delete profile</button>
+      <button ng-if="main.isAuthenticated() && main.currentUserId === profile.user.id" ng-click="main.logout()" class="button is-warning">Logout</button>
+    </div>
   </div>
-
-  <div class="field">
-    <h2>My trails</h2>
-    <div ng-repeat="trail in profile.trails">
-      <div class="card has-shadow">
-        <div class="card-image">
-          <div class="image" style="background-image:url('{{ trail.imageSRC }}')" ui-sref="trailsShow({ id: trail.id })">
+</div>
+<div class="columns">
+  <div class="column is-half">
+    <h2 class="subtitle">{{ profile.user.username }}'s trails</h2>
+    <div class="field">
+      <div ng-repeat="trail in profile.trails">
+        <div class="card has-shadow">
+          <div class="card-image">
+            <div class="image" style="background-image:url('{{ trail.imageSRC }}')" ui-sref="trailsShow({ id: trail.id })">
+            </div>
           </div>
-        </div>
-        <div class="content">
-          <p><a ui-sref="trailsShow({ id: trail.id })">Trail name: {{ trail.trailName }}</a></p>
+          <div class="content">
+            <p><a ui-sref="trailsShow({ id: trail.id })">Trail name: {{ trail.trailName }}</a></p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-
-  <div class="field">
-    <h2>Trails completed</h2>
-    <div ng-repeat="trail in profile.user.trailsCompleted">
-      <div class="card has-shadow">
-        <div class="card-image">
-          <div class="image" style="background-image:url('{{ trail.imageSRC }}')" ui-sref="trailsShow({ id: trail.id })">
+  <div class="column is-half">
+    <div class="field">
+      <h2 class="subtitle">{{ profile.user.username }} has completed</h2>
+      <div ng-repeat="trail in profile.user.trailsCompleted">
+        <div class="card has-shadow">
+          <div class="card-image">
+            <div class="image" style="background-image:url('{{ trail.imageSRC }}')" ui-sref="trailsShow({ id: trail.id })">
+            </div>
           </div>
-        </div>
-        <div class="content">
-          <p><a ui-sref="trailsShow({ id: trail.id })">Trail name: {{ trail.trailName }}</a></p>
+          <div class="content">
+            <p><a ui-sref="trailsShow({ id: trail.id })">Trail name: {{ trail.trailName }}</a></p>
+          </div>
         </div>
       </div>
     </div>

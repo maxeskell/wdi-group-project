@@ -38,9 +38,14 @@
       <textarea class="textarea" ng-model="trailsShow.newComment.text" placeholder="Add Comment"></textarea>
       <button class="button is-success">Comment</button>
     </form>
-
-    <hr>
-    <hr>
+  </div>
+</div>
+<div class="column is-10 is-offset-1">
+  <hr>
+  <hr>
+</div>
+<div class="column is-half is-offset-one-quarter">
+  <div class="content">
     <div class="card commentcard">
       <ul class="comments__created">
         <li ng-repeat="comment in trailsShow.trail.comments track by $index"><strong>{{ comment.createdBy.username }}</strong> - {{ comment.text }}
