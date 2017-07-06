@@ -55,13 +55,13 @@ Current version is 1.0.  We plan to release v1.1 in the near future with the fol
 <ul>
 <li> Add distance of walk to current location </li>
 <li> Sliders on trails page that filter walks by: distance to current location, length, difficult </li>
-<li> Improve trails page so that it zooms to show user and nearest five routes <li>
+<li> Improve trails page so that it zooms to show user and nearest five routes </li>
 <li> Add accessibility to routes, so that people can record whether it is good for walking, cycling, wheelchairs and prams </li>
-<li> Improve comments by allowing people to up load images <li>
-<li> Allow people to edit their user profile <li>
+<li> Improve comments by allowing people to up load images </li>
+<li> Allow people to edit their user profile </li>
 </ul>
 
-<h2> Licence </he>
+<h2> Licence </h2>
 This project is licensed under the MIT License - see the LICENSE.md file for details
 
 <h2> Acknowledgements </h2>
