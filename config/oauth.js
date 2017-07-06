@@ -12,7 +12,7 @@ module.exports = {
     client_id: process.env.FB_OAUTH_ID_GROUP_PROJECT,
     client_secret: process.env.FB_OAUTH_SECRET_GROUP_PROJECT,
     accessTokenURL: 'https://graph.facebook.com/v2.9/oauth/access_token',
-    redirect_uri: 'http://localhost:7000/',
+    redirect_uri: 'https://wildside-walks.herokuapp.com/',
     scope: 'email'
   }
 
