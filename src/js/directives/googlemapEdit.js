@@ -28,10 +28,11 @@ function googleMapEdit() {
         map = new google.maps.Map(element[0], {
           zoom: 14,
           center: oldRoute[0],
+          // center: oldRoute[0],
           scrollwheel: false
         });
         console.log('Scope oldRoute:', oldRoute);
-        console.log(scope.route);
+        console.log('Old route', scope.oldRoute);
         console.log(scope);
 
         oldPoly = new google.maps.Polyline({
@@ -44,16 +45,14 @@ function googleMapEdit() {
         oldPoly.setMap(map);
 
         const markers = scope.oldRoute;
-        const otherMarker = markers.slice(1, markers.length - 1);
-        const firstMarker = markers[0];
-        const lastMarker = markers[markers.length - 1];
+        // const otherMarker = markers.slice(1, markers.length - 1);
+        // const firstMarker = markers[0];
+        // const lastMarker = markers[markers.length - 1];
 
         const bounds = new google.maps.LatLngBounds();
-        bounds.extend(firstMarker);
-        bounds.extend(lastMarker);
-        bounds.extend(otherMarker[1]);
-        bounds.extend(otherMarker[0]);
-        bounds.extend(otherMarker[2]);
+        markers.forEach((marker) => {
+          bounds.extend(marker);
+        });
         map.fitBounds(bounds);
 
 
@@ -78,11 +77,9 @@ function googleMapEdit() {
           new google.maps.Marker({
             position,
             map
-
-
           });
 
-
+          console.log(scope.route);
         });
       }
 

@@ -38,11 +38,9 @@ function googleMap() {
         const lastMarker = markers[markers.length - 1];
 
         const bounds = new google.maps.LatLngBounds();
-        bounds.extend(firstMarker);
-        bounds.extend(lastMarker);
-        bounds.extend(otherMarker[1]);
-        bounds.extend(otherMarker[0]);
-        bounds.extend(otherMarker[2]);
+        markers.forEach((marker) => {
+          bounds.extend(marker);
+        });
         map.fitBounds(bounds);
 
 

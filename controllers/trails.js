@@ -21,7 +21,7 @@ function createRoute(req, res, next) {
 }
 
 function updateRoute(req, res, next) {
-  if(req.body.route.length < 5 ) req.body.route = req.body.oldRoute;
+  if(req.body.route.length === 0 ) req.body.route = req.body.oldRoute;
   if (req.file) req.body.image = req.file.filename;
 
   req.body.createdBy = req.user.id;
