@@ -31,7 +31,7 @@ User
   email: 'jack@sam.com',
   password: 'Password3',
   passwordConfirmation: 'Password3',
-  image: 'https://s-media-cache-ak0.pinimg.com/736x/d5/b1/41/d5b141034ccb0693ce8f3b8331817559.jpgg',
+  image: 'https://s-media-cache-ak0.pinimg.com/736x/d5/b1/41/d5b141034ccb0693ce8f3b8331817559.jpg',
   postcode: 'PO6 2PS'}])
 .then((users) => {
   console.log(`${users.length} users created`);
