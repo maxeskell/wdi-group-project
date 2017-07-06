@@ -18,7 +18,7 @@ User
   password: 'Password1',
   passwordConfirmation: 'Password1',
   image: 'https://upload.wikimedia.org/wikipedia/commons/d/d3/Fischotter%2C_Lutra_Lutra.JPG',
-  postcode: 'B461QR'
+  postcode: 'B46 1QR'
 },{
   username: 'olly',
   email: 'olly@sam.com',
