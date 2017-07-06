@@ -61,7 +61,7 @@ Current version is 1.0.  We plan to release v1.1 in the near future with the fol
 <li> Allow people to edit their user profile <li>
 </ul>
 
-<h2> Licence </he>
+<h2> Licence </h2>
 This project is licensed under the MIT License - see the LICENSE.md file for details
 
 <h2> Acknowledgements </h2>
