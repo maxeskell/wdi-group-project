@@ -20,6 +20,8 @@ body {
   font-weight: 300;
   background-color: $color6;
   height: 100vh;
+  position:relative;
+  padding-bottom: 500px;
   &.home {
     background-image: url('http://www.deerfields.ca/wp-content/uploads/2015/10/family-walking-down-path.jpg');
     // background-image: url('images/background.jpg');
@@ -46,6 +48,13 @@ body {
   }
   &.profile {
     height: 100%;
+  }
+  &.login {
+    position: relative;
+    footer {
+      position: absolute;
+      left: 0 ; right: 0; bottom: 0;
+    }
   }
 }
 
@@ -82,7 +91,7 @@ nav {
 
 .image {
   height: 300px;
-  width: 600px;
+  width: 400px;
   margin: 0 auto;
 }
 
@@ -120,66 +129,101 @@ form {
   display: block;
 }
 .profileimage {
-  border: 5px $color3 solid;
+  border: 5px white solid;
   border-radius: 5px;
   box-shadow: 1px 1px 1px 1px lightgrey;
 }
- .title {
-   text-align: center;
-   margin-top: 20px;
-   font-family: 'Roboto Condensed', sans-serif;
-   color: #5A5150 !important;
-   &.showtitle{
-     font-size: 40px;
+.profilerouteimage {
+  height: 80%;
+  border: 5px white solid;
+  box-shadow: 1px 1px 1px 1px lightgrey;
+  width: 60%;
+  margin: 0 auto;
+  display: block;
+}
+.title {
+  text-align: center;
+  margin-top: 20px;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #5A5150 !important;
+  &.showtitle{
+    font-size: 40px;
 
-   }
- }
- h2 {
-   a {
-     color: $color2;
-   }
- }
- .difficulty {
-   text-align: center;
- }
- .map {
-   border: 2px solid $color2;
-   border-radius: 10px;
-   box-shadow: 1px 1px lightgrey;
- }
- footer {
-   height: 60px !important;
-   div{
-     p {
-       display: inline-block;
-       padding: 20px;
-     }
-   }
- }
- h1 {
-   color: $color2 !important;
- }
- .content {
-   text-align: center;
-   font-family: 'Roboto Condensed', sans-serif;
-   color: #5A5150 !important;
- }
- .commenttitle{
-   text-align: left;
-   margin: 0;
- }
- .commentcard {
-   background-color: white !important;
-   text-align: left;
-   ul {
-     li {
-       list-style: none;
-       a{
-         float: right;
-       }
-     }
-   }
- }
- .textarea {
-   margin: 10px;
- }
+  }
+}
+h2 {
+  a {
+    color: $color2;
+  }
+}
+.difficulty {
+  text-align: center;
+}
+.map {
+  border: 2px solid $color2;
+  border-radius: 10px;
+  box-shadow: 1px 1px lightgrey;
+}
+footer {
+  height: 40px !important;
+  div{
+    p {
+      display: inline-block;
+      padding: 0 20px 0 10px;
+    }
+  }
+}
+h1 {
+  color: $color2 !important;
+}
+.content {
+  text-align: center;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #5A5150 !important;
+}
+.commenttitle{
+  text-align: left;
+  margin: 0;
+}
+.commentcard {
+  background-color: white !important;
+  text-align: left;
+  ul {
+    li {
+      list-style: none;
+      a{
+        float: right;
+      }
+    }
+  }
+}
+.textarea {
+  margin: 10px;
+}
+.message {
+  padding-top: 50px;
+  text-align: center;
+  width: 100%;
+  color: red;
+  line-height: 100%;
+  background-color: $color6 !important;
+}
+
+.subtitle {
+  text-align: center;
+}
+
+
+
+@media only screen and(max-width: 575px) {
+  footer {
+    div{
+      .appname{
+        display: inline-block;
+      }
+      p{
+        display: none;
+      }
+    }
+  }
+}
