@@ -82,7 +82,6 @@ nav {
 
 .image {
   height: 300px;
-  background-repeat: no-repeat;
   width: 600px;
   margin: 0 auto;
 }
@@ -120,6 +119,11 @@ form {
   margin: 0 auto;
   display: block;
 }
+.profileimage {
+  border: 5px $color3 solid;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px lightgrey;
+}
  .title {
    text-align: center;
    margin-top: 20px;
@@ -145,6 +149,12 @@ form {
  }
  footer {
    height: 60px !important;
+   div{
+     p {
+       display: inline-block;
+       padding: 20px;
+     }
+   }
  }
  h1 {
    color: $color2 !important;
