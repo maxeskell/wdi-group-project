@@ -29,7 +29,8 @@ function googleMapEdit() {
           zoom: 14,
           center: oldRoute[0],
           // center: oldRoute[0],
-          scrollwheel: false
+          scrollwheel: false,
+          styles: mapStyles
         });
         console.log('Scope oldRoute:', oldRoute);
         console.log('Old route', scope.oldRoute);

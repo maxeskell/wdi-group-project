@@ -29,7 +29,8 @@ function googleMapCreate() {
         map = new google.maps.Map(element[0], {
           zoom: 14,
           center: center,
-          scrollwheel: false
+          scrollwheel: false,
+          styles: mapStyles
         });
 
         if (navigator.geolocation) {

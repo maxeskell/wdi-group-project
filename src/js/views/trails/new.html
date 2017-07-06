@@ -2,9 +2,8 @@
 
 <div class="column is-8 is-offset-2">
   <div class="field">
-
-    <form name="trailsNew.newForm" ng-submit="trailsNew.create()" novalidate>
-
+    <h1 class="title">Create a New Trail </h1>
+    <form>
       <div class="field">
         <p class="control has-icons-left">
           <input class="input" base64 type="file" name="base64" id="image" ng-model="trailsNew.trail.base64" placeholder="Image" required>
@@ -64,7 +63,7 @@
 
       <div class="field">
         <p class="control has-icons-left">
-          <h2>Click on the map to draw your route.  Put a new marker evey time you change direction.</h2>
+          <h2>Click on the map to draw your route.  Put a new marker every time you change direction. A Trail must have at least three markers</h2>
         </p>
       </div>
 
