@@ -1,42 +1,52 @@
 <!DOCTYPE html>
 
 <div class="column is-10 is-offset-1" ui-view="header" autoscroll="true">
-  <div class="card">
+  <h2 class="title showtitle">{{ trailsShow.trail.trailName }}</h2>
+  <google-map center="trailsShow.trail.route[0]" route="trailsShow.trail.route"> </google-map>
+
+  <div class="content">
+    <p><strong>{{ trailsShow.trail.description }}</strong></p>
     <div class="card-image">
-      <div class="image" style="background-image:url('{{ trailsShow.trail.imageSRC }}')">
-      </div>
-    </div>
-    <div class="content">
-      <p>Trail name: {{ trailsShow.trail.trailName }}</p>
-      <p>Created by: <a ui-sref="profile({ id: trailsShow.trail.createdBy.id })"> {{ trailsShow.trail.createdBy.username }}</a></p>
-      <p>Trail description: {{ trailsShow.trail.description }}</p>
-      <p>Trail difficulty: {{ trailsShow.trail.difficulty }}</p>
-      <p>Trail length: ~{{ trailsShow.trail.length }} (Km)</p>
-      <p>Trail time: ~{{ trailsShow.trail.time }} (hh:mm) Based on 4 Kph</p>
-      <p>Todays Weather: {{ trailsShow.weather.summary }}</p>
-      <img src="images/{{ trailsShow.weather.icon }}.svg" alt="{{ trailsShow.weather.icon }}">
+      <!-- <div class="image" style="background-image:url('{{ trailsShow.trail.imageSRC }}')">
+    </div> -->
+    <img ng-src="{{ trailsShow.trail.imageSRC }}" alt="" class="showimage">
+  </div>
+  <p>Trail difficulty: <strong>{{ trailsShow.trail.difficulty }}</strong></p>
+  <p>Trail length: ~<strong>{{ trailsShow.trail.length }} (Km)</strong></p>
+  <p>Trail time: ~<strong>{{ trailsShow.trail.time }} (hh:mm) Based on 4 Kph</strong></p>
+  <p>Todays Weather:<strong> {{ trailsShow.weather.summary }}</strong></p>
+  <img src="images/{{ trailsShow.weather.icon }}.svg" alt="{{ trailsShow.weather.icon }}">
+  <h3>Created by: <a ui-sref="profile({ id: trailsShow.trail.createdBy.id })"> <strong>{{ trailsShow.trail.createdBy.username }}</strong></a></h3>
+  <button ng-click="trailsShow.toggleCompleted()" class="button is-success is-half" ng-if="main.isAuthenticated() && !trailsShow.isComplete()">Mark as completed</button>
 
-      <button ng-click="trailsShow.toggleCompleted()" class="button is-primary is-primary" ng-if="main.isAuthenticated() && !trailsShow.isComplete()">Mark as completed</button>
+  <hr>
 
-      <button ng-click="trailsShow.toggleCompleted()" class="button is-primary is-success" ng-if="trailsShow.isComplete()">Route completed</button>
 
-      <button ui-sref="trailsEdit({ id: trailsShow.trail.id })" class="button is-warning" ng-if="main.isAuthenticated() && main.currentUserId === trailsShow.trail.createdBy.id">Edit</button>
 
-      <button ng-click="trailsShow.delete()" class="button is-danger" ng-if="main.isAuthenticated() && main.currentUserId === trailsShow.trail.createdBy.id">Delete</button>
-    </div>
+  <button ng-click="trailsShow.toggleCompleted()" class="button is-primary is-success" ng-if="trailsShow.isComplete()">Route completed</button>
+
+  <button ui-sref="trailsEdit({ id: trailsShow.trail.id })" class="button is-warning" ng-if="main.isAuthenticated() && main.currentUserId === trailsShow.trail.createdBy.id">Edit</button>
+
+  <button ng-click="trailsShow.delete()" class="button is-danger" ng-if="main.isAuthenticated() && main.currentUserId === trailsShow.trail.createdBy.id">Delete</button>
+</div>
+<hr>
+</div>
+<div class="column is-half is-offset-one-quarter">
+  <div class="content">
+
+    <form ng-submit="trailsShow.addComment()" ng-if="main.isAuthenticated()">
+      <textarea class="textarea" ng-model="trailsShow.newComment.text" placeholder="Add Comment"></textarea>
+      <button class="button is-success">Comment</button>
+    </form>
+
     <hr>
-
-    <div class="content">
-      <h2>Comments</h2>
+    <hr>
+    <div class="card commentcard">
       <ul class="comments__created">
-        <li ng-repeat="comment in trailsShow.trail.comments track by $index"><strong>{{ comment.createdBy.username }}</strong> - {{ comment.text }} <button class="button is-danger" ng-click="trailsShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUserId === comment.createdBy.id">Delete</button></li>
+        <li ng-repeat="comment in trailsShow.trail.comments track by $index"><strong>{{ comment.createdBy.username }}</strong> - {{ comment.text }}
+          <a class="button is-danger is-small" ng-click="trailsShow.deleteComment(comment)" ng-if="main.isAuthenticated() && main.currentUserId === comment.createdBy.id">Delete</a>
+        </li>
       </ul>
-      <form ng-submit="trailsShow.addComment()" ng-if="main.isAuthenticated()">
-        <label class="lable">Add comment</label>
-        <textarea ng-model="trailsShow.newComment.text"></textarea>
-        <button class="button is-primary">Comment</button>
-      </form>
     </div>
-    <google-map center="trailsShow.trail.route[0]" route="trailsShow.trail.route"> </google-map>
   </div>
 </div>

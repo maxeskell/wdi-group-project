@@ -26,7 +26,8 @@ function googleMapIndex() {
         map = new google.maps.Map(element[0], {
           zoom: 7,
           center: center,
-          scrollwheel: false
+          scrollwheel: false,
+          styles: mapStyles
         });
         scope.$watch('trails', addMarkers, true);
 
@@ -65,6 +66,7 @@ function googleMapIndex() {
                 <h1><a href="/trails/${trail.id}">${trail.trailName}</a></h1>
                 <p>Length: ~${trail.length} (Km)</p>
                 <p>Time: ~${trail.time} (hh:mm)</p>
+                <p>Difficulty: ~${trail.difficulty}</p>
               `
             });
 

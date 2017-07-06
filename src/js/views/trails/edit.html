@@ -2,13 +2,15 @@
 
 <div class="column is-8 is-offset-2">
   <div class="field">
-
+    <h1 class="title">Edit your Trail </h1>
     <form name="trailsEdit.editForm" ng-submit="trailsEdit.update()" novalidate>
 
       <div class="field">
         <p class="control has-icons-left">
-          <label class="label" for="image">Image</label>
-          <input class="input" base64 type="file" name="base64" id="image" ng-model="trailsEdit.trail.base64" required>
+          <input class="input" base64 type="file" name="base64" id="image" ng-model="trailsEdit.trail.base64" accept="image/x-png,image/gif,image/jpeg" required>
+          <span class="icon is-medium is-left">
+            <i class="fa fa-picture-o"></i>
+          </span>
           <div ng-messages="trailsEdit.editForm.base64.$error" role="alert" ng-show="(trailsEdit.editForm.$submitted || trailsEdit.editForm.base64.$touched) && trailsEdit.editForm.base64.$invalid" class="error">
             <div ng-message="required">Image is required.</div>
           </div>
@@ -17,19 +19,25 @@
       </div>
 
       <div class="field">
-        <p class="control">
-          <label class="label" for="trailName">Trail name</label>
-          <input class="input" type="text" name="trailName" id="trailName" ng-model="trailsEdit.trail.trailName" required>
-          <div ng-messages="trailsEdit.editForm.trailName.$error" role="alert" ng-show="(trailsEdit.editForm.$submitted || trailsEdit.editForm.trailName.$touched) && trailsEdit.editForm.trailName.$invalid" class="error">
-            <div ng-message="required">Trail name is required.</div>
-          </div>
+        <p class="control has-icons-left">
+          <input class="input" type="text" name="trailName" id="trailName" ng-model="trailsEdit.trail.trailName" required pattern="/^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$/" maxlength="20">
+          <span class="icon is-medium is-left">
+            <i class="fa fa-leaf"></i>
+          </span>
         </p>
+
+        <div ng-messages="trailsEdit.editForm.trailName.$error" role="alert" ng-show="(trailsEdit.editForm.$submitted || trailsEdit.editForm.trailName.$touched) && trailsEdit.editForm.trailName.$invalid" class="error">
+          <div ng-message="required">Trail name is required.</div>
+          <div ng-message="pattern">Please enter a valid trail name.</div>
+        </div>
       </div>
 
       <div class="field">
-        <p class="control">
-          <label class="label" for="description">Trail description</label>
-          <input class="input" type="text" name="description" id="description" ng-model="trailsEdit.trail.description" required>
+        <p class="control has-icons-left">
+          <input class="input" type="text" name="description" id="description" ng-model="trailsEdit.trail.description" required maxlength="1000">
+          <span class="icon is-medium is-left">
+            <i class="fa fa-leaf"></i>
+          </span>
           <div ng-messages="trailsEdit.editForm.description.$error" role="alert" ng-show="(trailsEdit.editForm.$submitted || trailsEdit.editForm.description.$touched) && trailsEdit.editForm.description.$invalid" class="error">
             <div ng-message="required">Trail description is required.</div>
           </div>
@@ -60,7 +68,7 @@
       <google-map-edit center="{ lat: 51.526583, lng: -0.085656}" old-route="trailsEdit.trail.oldRoute" route="trailsEdit.trail.route"></google-map-edit>
       <div class="field">
         <p class="control">
-          <button type="submit" class="button is-primary">Update trail</button>
+          <button type="submit" class="button is-warning is-fullwidth">Update trail</button>
         </p>
       </div>
 

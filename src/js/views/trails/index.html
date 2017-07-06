@@ -3,19 +3,24 @@
 <div class="column is-10 is-offset-1 ">
 
   <google-map-index center="{ lat: 51.533309, lng: -0.105317 }" trails="trailsIndex.all">
-  MAP GOES HERE
-</google-map-index>
+    MAP GOES HERE
+  </google-map-index>
 
   <div ng-repeat="trail in trailsIndex.all">
     <div class="card has-shadow">
+      <h2 class="title"><a ui-sref="trailsShow({ id: trail.id })">{{ trail.trailName }}</a></h2>
       <div class="card-image">
-        <div class="image" style="background-image:url('{{ trail.imageSRC }}')" ui-sref="trailsShow({ id: trail.id })">
-        </div>
-      </div>
-      <div class="content">
-        <p>Trail name: <a ui-sref="trailsShow({ id: trail.id })">{{ trail.trailName }}</a></p>
-        <p>Trail difficulty: {{ trail.difficulty }}</p>
-      </div>
+        <!-- <div class="image" style="background-image:url('{{ trail.imageSRC }}')" ui-sref="trailsShow({ id: trail.id })">
+      </div> -->
+      <figure>
+        <img ng-src="{{ trail.imageSRC }}" class="indeximage">
+      </figure>
+    </div>
+    <div class="content">
+
+      <p class="difficulty">{{trail.description}}</p>
+      <p class="difficulty">Trail difficulty: {{ trail.difficulty }}</p>
     </div>
   </div>
+</div>
 </div>

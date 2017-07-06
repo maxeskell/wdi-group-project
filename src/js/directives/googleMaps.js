@@ -30,7 +30,8 @@ function googleMap() {
         map = new google.maps.Map(element[0], {
           zoom: 10,
           center: center,
-          scrollwheel: false
+          scrollwheel: false,
+          styles: mapStyles
         });
 
 

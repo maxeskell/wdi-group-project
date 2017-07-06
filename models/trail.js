@@ -16,11 +16,15 @@ const commentSchema = new mongoose.Schema({
 const trailSchema = new mongoose.Schema({
   trailName: {
     type: String,
-    required: true
+    required: true,
+    trim: true,
+    unique: true,
+    match: /^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$/
   },
   description: {
     type: String,
-    required: true
+    required: true,
+    trim: true
   },
   difficulty: {
     type: Number,

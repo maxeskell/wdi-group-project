@@ -1,58 +1,82 @@
 <!DOCTYPE html>
 <div class="column is-half is-offset-one-quarter">
-  <form ng-submit="register.submit()">
+  <form name="register.registerForm" ng-submit="register.submit()" novalidate>
 
     <div class="field">
       <p class="control has-icons-left">
-        <input class="input" type="text" placeholder="Username" name="username" id="username" ng-model="register.user.username">
+        <input class="input" type="text" placeholder="Username" name="username" id="username" ng-model="register.user.username" maxlength="20" pattern="^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$" required>
         <span class="icon is-medium is-left">
           <i class="fa fa-user-circle-o"></i>
         </span>
       </p>
+      <div class="ng-message-error" ng-messages="register.registerForm.username.$error" ng-show="(register.registerForm.$submitted || register.registerForm.username.$touched)">
+        <p ng-message="required">A username is required</p>
+        <p ng-message="pattern">Please enter a valid username, e.g., David Attenborough</p>
+      </div>
     </div>
 
     <div class="field">
       <p class="control has-icons-left">
-        <input class="input" type="text" placeholder="Email" name="email" id="email" ng-model="register.user.email">
+        <input class="input" type="text" placeholder="Email" name="email" id="email" ng-model="register.user.email" maxlength="30" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required >
         <span class="icon is-medium is-left">
           <i class="fa fa-envelope"></i>
         </span>
       </p>
+      <div class="ng-message-error" ng-messages="register.registerForm.email.$error" ng-show="(register.registerForm.$submitted || register.registerForm.email.$touched)">
+        <p ng-message="required">An email is required</p>
+        <p ng-message="pattern">Please enter a valid email address, e.g., david_attenborough@bbc.com</p>
+      </div>
     </div>
+
     <div class="field">
       <p class="control has-icons-left">
-        <input class="input" type="text" placeholder="Postcode" name="postcode" id="postcode" ng-model="register.user.postcode">
+        <input class="input" type="text" placeholder="Postcode" name="postcode" id="postcode" ng-model="register.user.postcode" maxlength="10" required pattern="[A-Z]{1,2}[0-9]{1,2}[A-Z]? [0-9][A-Z]{2}">
         <span class="icon is-medium is-left">
           <i class="fa fa-home"></i>
         </span>
       </p>
+      <div class="ng-message-error" ng-messages="register.registerForm.postcode.$error" ng-show="(register.registerForm.$submitted || register.registerForm.postcode.$touched)">
+        <p ng-message="pattern">Please enter a valid postcode, e.g., W1A 1AA</p>
+      </div>
     </div>
 
     <div class="field">
       <p class="control has-icons-left">
-        <input class="input" type="file" base64 placeholder="Image" name="image" id="image" ng-model="register.user.base64">
+        <input class="input" type="file" base64 placeholder="Image" name="image" id="image" ng-model="register.user.base64" accept="image/x-png,image/gif,image/jpeg">
         <span class="icon is-medium is-left">
           <i class="fa fa-picture-o"></i>
         </span>
       </p>
+      <div class="ng-message-error" ng-messages="register.registerForm.image.$error" ng-show="(register.registerForm.$submitted || register.registerForm.image.$touched)">
+        <p ng-message="required">An image is required</p>
+      </div>
     </div>
 
     <div class="field">
       <p class="control has-icons-left">
-        <input class="input" type="password" placeholder="Password" name="password" id="password" ng-model="register.user.password">
+        <input class="input" type="password" placeholder="Password" name="password" id="password" ng-model="register.user.password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required>
         <span class="icon is-medium is-left">
           <i class="fa fa-lock"></i>
         </span>
       </p>
+      <div class="ng-message-error" ng-messages="register.registerForm.password.$error" ng-show="(register.registerForm.$submitted || register.registerForm.password.$touched)">
+        <p ng-message="required">A password is required</p>
+        <p ng-message="pattern">Password must contain at least one number and one letter, and be at least 8 or more characters</p>
+      </div>
     </div>
 
     <div class="field">
       <p class="control has-icons-left">
-        <input class="input" type="password" placeholder="Password Confirmation" name="passwordConfirmation" id="passwordConfirmation" ng-model="register.user.passwordConfirmation">
+        <input class="input" type="password" placeholder="Password confirmation" name="passwordConfirmation" id="passwordConfirmation" ng-model="register.user.passwordConfirmation"
+        ng-pattern="register.regex" required>
         <span class="icon is-medium is-left">
           <i class="fa fa-exclamation-triangle"></i>
         </span>
       </p>
+      <div class="ng-message-error" ng-messages="register.registerForm.passwordConfirmation.$error" ng-show="(register.registerForm.$submitted || register.registerForm.passwordConfirmation.$touched)">
+        <p ng-message="required">You must confirm your password</p>
+        <p ng-message="pattern">Passwords must match</p>
+      </div>
     </div>
 
     <div class="field">

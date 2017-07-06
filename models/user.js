@@ -6,19 +6,27 @@ const s3 = require('../lib/s3');
 const userSchema = new mongoose.Schema({
   username: {
     type: String,
-    required: true
+    required: true,
+    trim: true,
+    match: /^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$/
   },
   email: {
-    type: String
+    type: String,
+    trim: true,
+    unique: true,
+    match: /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/
   },
   password: {
-    type: String
+    type: String,
+    match: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
   },
   image: {
     type: String
   },
   postcode: {
-    type: String
+    type: String,
+    trim: true,
+    match: /[A-Z]{1,2}[0-9]{1,2}[A-Z]? [0-9][A-Z]{2}/
   },
   trailsCompleted: [{
     type: mongoose.Schema.ObjectId,
