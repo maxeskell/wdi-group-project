@@ -24,8 +24,7 @@ const trailSchema = new mongoose.Schema({
   description: {
     type: String,
     required: true,
-    trim: true,
-    match: /d{1000}/
+    trim: true
   },
   difficulty: {
     type: Number,

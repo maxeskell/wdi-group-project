@@ -19,10 +19,10 @@ describe('Authentication tests', function() {
         .send({
           username: 'test',
           email: 'test@test.com',
-          password: 'password',
-          passwordConfirmation: 'password',
+          password: 'Password1',
+          passwordConfirmation: 'Password1',
           image: 'http://image.com',
-          postcode: 'B461QR',
+          postcode: 'B46 1QR',
           trailsCompleted: []
         }).end((err, res) => {
           expect(res.body.message).to.be.a('string');
@@ -48,14 +48,14 @@ describe('Authentication tests', function() {
       User.create({
         username: 'test',
         email: 'test@test.com',
-        password: 'password',
-        passwordConfirmation: 'password'
+        password: 'Password1',
+        passwordConfirmation: 'Password1'
       }, () => {
         api.post('/api/login')
           .set('Accept', 'application/json')
           .send({
             email: 'test@test.com',
-            password: 'password'
+            password: 'Password1'
           }).end((err, res) => {
             expect(res.body.token).to.be.a('string');
             done();
@@ -70,8 +70,8 @@ describe('Authentication tests', function() {
       User.create({
         username: 'test',
         email: 'test@test.com',
-        password: 'password',
-        passwordConfirmation: 'password'
+        password: 'Password1',
+        passwordConfirmation: 'Password1'
       }, () => {
         api.post('/api/login')
           .set('Accept', 'application/json')
