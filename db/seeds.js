@@ -335,7 +335,7 @@ User
     trailsCompleted: []
   }, {
     trailName: 'The Whalebone',
-    description: 'Starting at the Whalebone pub, this is a great walk for families. The path takes you from one across the River Colne and back again to form a whalebone.',
+    description: 'Starting at the Whalebone pub, this is a great walk for families. The path takes you from one across the River Colne and back again to form a weird looking whalebone.',
     difficulty: 2,
     createdBy: users[0],
     image: 'https://upload.wikimedia.org/wikipedia/commons/e/e0/Brighton_Pier_at_dusk.jpg',
@@ -384,7 +384,7 @@ User
       }],
     trailsCompleted: []
   }, {
-    trailName: 'Bring Your Daugther To The Slaughter',
+    trailName: 'You Can\'t Spell Slaughter Without Laughter',
     description: 'If you are sick to death of home, have a stab at this killer walk, which will surely lift your spirits. Suitable for all the family',
     difficulty: 1,
     createdBy: users[1],

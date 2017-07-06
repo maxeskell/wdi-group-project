@@ -8,7 +8,7 @@ Download or fork the code and save it to your preferred directory.
 
 <h3> Installing </h3>
 Run Yarn to install all the developer and deployment dependencies </br>
-```yarn```
+```gulp```
 
 Install Yarn if you do not have it </br>
 ```brew install yarn``` <a href="https://yarnpkg.com/lang/en/docs/install/"> find help here</a>
@@ -26,7 +26,7 @@ Helpful links:
 <li><a href="https://aws.amazon.com/console/"> AWS console </a></li>
 <li><a href="https://github.com/">Github</a></li>
 <li><a href="https://developers.facebook.com/">Facebook for developers </a></li>
-<ul>
+</ul>
 
 <h2> Running tests </h2>
 There is a comprehensive test suit included within the app.
@@ -44,7 +44,7 @@ The app is built to de deployed on Heroku.
 <ul>
 <ol>Environmental variables need to be uploaded to HEROKU (including API ID and CLIENT SECRETS) </ol>
 <ol>Ensure that Facebook and Github settings (online) direct the user to the correct url.</ol>
-<ul>
+</ul>
 
 
 <h2> Built with </h2>
@@ -59,7 +59,8 @@ Current version is 1.0.  We plan to release v1.1 in the near future with the fol
 <li> Add accessibility to routes, so that people can record whether it is good for walking, cycling, wheelchairs and prams </li>
 <li> Improve comments by allowing people to up load images <li>
 <li> Allow people to edit their user profile <li>
-<ul>
+</ul>
+
 <h2> Licence </he>
 This project is licensed under the MIT License - see the LICENSE.md file for details
 
