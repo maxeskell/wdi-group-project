@@ -16,9 +16,10 @@ function googleMapIndex() {
 
       let map = null;
       let infowindow = null;
+      let markers = [];
 
       scope.$watch('center', initMap);
-
+      scope.$on('$destroy', destroyMap);
 
       function initMap(center) {
         if(!center) return false;
@@ -72,13 +73,18 @@ function googleMapIndex() {
             infowindow.open(map, marker);
           });
 
+          markers.push(marker);
+
         }
-
-
-
-
-
       }
+
+      function destroyMap() {
+        console.log('bye Index map');
+        markers.forEach(marker => marker.setMap(null));
+        markers = [];
+        map = null;
+      }
+
 
     }
   };
