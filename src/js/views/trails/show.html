@@ -33,7 +33,7 @@
       </ul>
       <form ng-submit="trailsShow.addComment()" ng-if="main.isAuthenticated()">
         <label class="lable">Add comment</label>
-        <textarea ng-model="trailsShow.newComment.text"></textarea>
+        <textarea ng-model="trailsShow.newComment.text" maxlength="1000"></textarea>
         <button class="button is-primary">Comment</button>
       </form>
     </div>
