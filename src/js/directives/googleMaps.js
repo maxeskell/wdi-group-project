@@ -79,7 +79,7 @@ function googleMap() {
       }
 
       function destroyMap() {
-        console.log('bye Index map');
+        console.log('bye trailShow map');
         markers.forEach(marker => marker.setMap(null));
         markers = [];
         map = null;
