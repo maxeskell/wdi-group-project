@@ -15,6 +15,7 @@ function googleMap() {
     link(scope, element) {
 
       let map = null;
+      let markers = [];
       let marker = null;
       let poly = null;
       let markerTwo = null;
@@ -22,6 +23,7 @@ function googleMap() {
 
 
       scope.$watch('center', initMap);
+      scope.$on('$destroy', destroyMap);
 
       function initMap(center) {
         if (!center) return false;
@@ -72,6 +74,14 @@ function googleMap() {
 
 
         });
+
+      }
+
+      function destroyMap() {
+        console.log('bye Index map');
+        markers.forEach(marker => marker.setMap(null));
+        markers = [];
+        map = null;
 
       }
     }

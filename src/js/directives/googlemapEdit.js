@@ -17,11 +17,12 @@ function googleMapEdit() {
     link(scope, element) {
 
       let map = null;
-      // let marker = null;
+      let markers = [];
       let poly = null;
       let oldPoly = null;
 
       scope.$watch('oldRoute', initMap, true);
+      scope.$on('$destroy', destroyMap);
 
       function initMap(oldRoute) {
         if (!oldRoute) return false;
@@ -31,9 +32,7 @@ function googleMapEdit() {
           // center: oldRoute[0],
           scrollwheel: false
         });
-        console.log('Scope oldRoute:', oldRoute);
-        console.log('Old route', scope.oldRoute);
-        console.log(scope);
+
 
         oldPoly = new google.maps.Polyline({
           path: oldRoute,
@@ -45,9 +44,7 @@ function googleMapEdit() {
         oldPoly.setMap(map);
 
         const markers = scope.oldRoute;
-        // const otherMarker = markers.slice(1, markers.length - 1);
-        // const firstMarker = markers[0];
-        // const lastMarker = markers[markers.length - 1];
+
 
         const bounds = new google.maps.LatLngBounds();
         markers.forEach((marker) => {
@@ -79,10 +76,16 @@ function googleMapEdit() {
             map
           });
 
-          console.log(scope.route);
         });
       }
 
+
+      function destroyMap() {
+        console.log('bye Edit map');
+        markers.forEach(marker => marker.setMap(null));
+        markers = [];
+        map = null;
+      }
 
     }
   };

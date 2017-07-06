@@ -18,11 +18,11 @@ function googleMapCreate() {
     link(scope, element) {
 
       let map = null;
-      // let marker = null;
+      let markers = [];
       let poly = null;
 
       scope.$watch('center', initMap);
-
+      scope.$on('$destroy', destroyMap);
 
       function initMap(center) {
         if (!center) return false;
@@ -61,13 +61,14 @@ function googleMapCreate() {
 
           scope.path.push(position);
           scope.$apply();
+
+          // calculating route length in time and distance
           scope.length = (google.maps.geometry.spherical.computeLength(poly.getPath())/1000).toPrecision(3);
           const decimalTimeString = (scope.length /4);
           var n = new Date(0,0);
           n.setSeconds(+decimalTimeString * 60 * 60);
           scope.time = n.toTimeString().slice(0, 5);
-          console.log('poly length', scope.length);
-          console.log('time', scope.time);
+
           scope.$apply();
 
           new google.maps.Marker({
@@ -76,6 +77,13 @@ function googleMapCreate() {
 
           });
         });
+      }
+
+      function destroyMap() {
+        console.log('bye Create map');
+        markers.forEach(marker => marker.setMap(null));
+        markers = [];
+        map = null;
       }
 
     }
