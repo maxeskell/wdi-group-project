@@ -22,11 +22,11 @@ describe('Trail tests', () => {
       User
         .create({
           username: 'max',
-          email: 'max@sam',
-          password: 'password',
-          passwordConfirmation: 'password',
+          email: 'max@max.com',
+          password: 'Password1',
+          passwordConfirmation: 'Password1',
           image: 'https://upload.wikimedia.org/wikipedia/commons/d/d3/Fischotter%2C_Lutra_Lutra.JPG',
-          postcode: 'B461QR'
+          postcode: 'B46 1QR'
         })
         .then((user) => {
           return Trail
@@ -114,11 +114,11 @@ describe('Trail tests', () => {
       User
         .create({
           username: 'max',
-          email: 'max@sam',
-          password: 'password',
-          passwordConfirmation: 'password',
+          email: 'max@max.com',
+          password: 'Password1',
+          passwordConfirmation: 'Password1',
           image: 'https://upload.wikimedia.org/wikipedia/commons/d/d3/Fischotter%2C_Lutra_Lutra.JPG',
-          postcode: 'B461QR'
+          postcode: 'B46 1QR'
         }, (err, _user) => {
           user = _user;
           done();
@@ -165,11 +165,11 @@ describe('Trail tests', () => {
     beforeEach(done => {
       User.create({
         username: 'max',
-        email: 'max@sam',
-        password: 'password',
-        passwordConfirmation: 'password',
+        email: 'max@max.com',
+        password: 'Password1',
+        passwordConfirmation: 'Password1',
         image: 'https://upload.wikimedia.org/wikipedia/commons/d/d3/Fischotter%2C_Lutra_Lutra.JPG',
-        postcode: 'B461QR'
+        postcode: 'B46 1QR'
       }, (err, _user) => {
         user = _user;
         token = jwt.sign({
@@ -221,11 +221,11 @@ describe('Trail tests', () => {
       User
         .create({
           username: 'max',
-          email: 'max@sam',
-          password: 'password',
-          passwordConfirmation: 'password',
+          email: 'max@max.com',
+          password: 'Password1',
+          passwordConfirmation: 'Password1',
           image: 'https://upload.wikimedia.org/wikipedia/commons/d/d3/Fischotter%2C_Lutra_Lutra.JPG',
-          postcode: 'B461QR'
+          postcode: 'B46 1QR'
         })
         .then((user) => {
           return Trail
@@ -274,11 +274,11 @@ describe('Trail tests', () => {
       User
         .create({
           username: 'max',
-          email: 'max@sam',
-          password: 'password',
-          passwordConfirmation: 'password',
+          email: 'max@max.com',
+          password: 'Password1',
+          passwordConfirmation: 'Password1',
           image: 'https://upload.wikimedia.org/wikipedia/commons/d/d3/Fischotter%2C_Lutra_Lutra.JPG',
-          postcode: 'B461QR'
+          postcode: 'B46 1QR'
         })
         .then((user) => {
           return Trail
@@ -327,11 +327,11 @@ describe('Trail tests', () => {
     beforeEach(done => {
       User.create({
         username: 'max',
-        email: 'max@sam',
-        password: 'password',
-        passwordConfirmation: 'password',
+        email: 'max@max.com',
+        password: 'Password1',
+        passwordConfirmation: 'Password1',
         image: 'https://upload.wikimedia.org/wikipedia/commons/d/d3/Fischotter%2C_Lutra_Lutra.JPG',
-        postcode: 'B461QR'
+        postcode: 'B46 1QR'
       }, (err, _user) => {
         user = _user;
         token = jwt.sign({
