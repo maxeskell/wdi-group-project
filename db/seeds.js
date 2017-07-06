@@ -41,7 +41,7 @@ User
     description: 'A delightful walk sampling the nature reserves of the Tame Valley near Tamworth, with lots of opportunities for entertainment and refreshment, as well as bird watching. The walk is flat and on made-up paths for the most part',
     difficulty: 1,
     image: 'http://sites.psu.edu/siowfa14/wp-content/uploads/sites/13467/2014/10/Men-and-Women-walking_cropped.jpg',
-    createdBy: users[2],
+    createdBy: users[0],
     length: 5.5,
     time: '01:45',
     route: [{
@@ -69,7 +69,7 @@ User
     description: `This walk is fine, so long as you don't mind people! Kingsbury Water Park was heaving on a warm August Sunday afternoon, as you might expect. NB - point 1: when you briefly emerge from the trees, ignore a right fork and follow the path back into the trees; point 2: the turning into the water park is an inconspicuous footpath to the right of a very conspicuous metal barrier/gate.`,
     difficulty: 2,
     image: 'http://img.mp.itc.cn/upload/20170314/9052b6c3e8264d8caafa5e89568f76eb_th.jpeg',
-    createdBy: users[0],
+    createdBy: users[1],
     length: 5.5,
     time: '01:45',
     route: [{
@@ -99,7 +99,7 @@ User
     description: `Ah, just give me a kissssss (Disclaimer: Aerosmith do not feautre on this walk ).`,
     difficulty: 3,
     image: 'https://mw2.google.com/mw-panoramio/photos/medium/88809736.jpg',
-    createdBy: users[1],
+    createdBy: users[2],
     length: 5.5,
     time: '01:45',
     route: [{
@@ -124,7 +124,7 @@ User
     description: 'An enjoyable short walk around the parish of Fillongley in the north Warwickshire Countryside. This walk is a waymarked circular route designed as part of the North Arden Z-Heritage trail. Perfect for hunting zombies',
     difficulty: 4,
     image: 'https://www.thesnipenews.com/wp-content/gallery/zombie-walk-2016/zombie-walk-2016-01.jpg',
-    createdBy: users[0],
+    createdBy: users[2],
     length: 5.5,
     time: '01:45',
     route: [{
@@ -152,7 +152,7 @@ User
     description: 'a beautiful coastal mountain stroll that is home to many rare and interesting species. You are welcome to use the trails to explore this uncommon forest where northern and southern species meet. Keep in mind that the trails here are rugged, rocky and steep. None of them can be described as easy',
     difficulty: 4,
     image: 'http://s0.geograph.org.uk/photos/51/67/516718_e43f1c32.jpg',
-    createdBy: users[2],
+    createdBy: users[0],
     length: 5.5,
     time: '01:45',
     route: [{
@@ -185,7 +185,7 @@ User
     trailName: 'Bright and Breezy',
     description: 'This is a lovely route, really easy for all ages and abilities',
     difficulty: 1,
-    createdBy: users[0],
+    createdBy: users[1],
     image: 'https://upload.wikimedia.org/wikipedia/commons/e/e0/Brighton_Pier_at_dusk.jpg',
     length: 5.5,
     time: '01:45',
@@ -307,7 +307,7 @@ User
     trailName: 'Baskerville Hound Hunt',
     description: 'Go looking for the most famous dog in Devonshire, if you are lucky, you might even find a few landmines. Beautiful views to the south, including Dartmoor Mountain and the narrow sea. Scrub oak and blueberry hold on to this warm, exposed slope of thin soil. Children are allowed on this route if on a leash',
     difficulty: 4,
-    createdBy: users[1],
+    createdBy: users[0],
     image: 'https://pbs.twimg.com/media/CYsYYxIUMAAEi8O.jpg',
     length: 5.5,
     time: '01:45',
@@ -381,40 +381,6 @@ User
       {
         lat: 51.84473976132756,
         lng: 0.9456825256347656
-      }],
-    trailsCompleted: []
-  }, {
-    trailName: 'You Can\'t Spell Slaughter Without Laughter',
-    description: 'If you are sick to death of home, have a stab at this killer walk, which will surely lift your spirits. Suitable for all the family',
-    difficulty: 1,
-    createdBy: users[1],
-    image: 'http://img11.deviantart.net/2768/i/2011/190/c/a/river_of_blood_by_x_xeroprodigy_x-d3lj63c.jpg',
-    length: 5.5,
-    time: '01:45',
-    route: [
-      {
-        lat: 51.901117170335866,
-        lng: -1.758413314819336
-      },
-      {
-        lat: 51.901170129601645,
-        lng: -1.7624151706695557
-      },
-      {
-        lat: 51.90219620305303,
-        lng: -1.7658483982086182
-      },
-      {
-        lat: 51.90400335930322,
-        lng: -1.7699360847473145
-      },
-      {
-        lat: 51.90511541932153,
-        lng: -1.7755687236785889
-      },
-      {
-        lat: 51.90655178943083,
-        lng: -1.7768669128417969
       }],
     trailsCompleted: []
   }]);
