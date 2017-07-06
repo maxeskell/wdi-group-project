@@ -18,13 +18,12 @@
 
       <div class="field">
         <p class="control has-icons-left">
-          <input class="input" type="text" name="trailName" id="trailName" ng-model="trailsNew.trail.trailName" placeholder="Trail Name" required pattern="/^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$/" maxlength="20">
+          <input class="input" type="text" name="trailName" id="trailName" ng-model="trailsNew.trail.trailName" placeholder="Trail Name" required maxlength="20">
           <span class="icon is-medium is-left">
             <i class="fa fa-leaf"></i>
           </span>
           <div ng-messages="trailsNew.newForm.trailName.$error" role="alert" ng-show="(trailsNew.newForm.$submitted || trailsNew.newForm.trailName.$touched) && trailsNew.newForm.trailName.$invalid" class="error">
             <div ng-message="required">Trail name is required.</div>
-            <div ng-message="pattern">Please enter a valid trail name.</div>
           </div>
         </p>
       </div>

@@ -18,7 +18,7 @@ User
   password: 'Password1',
   passwordConfirmation: 'Password1',
   image: 'https://upload.wikimedia.org/wikipedia/commons/d/d3/Fischotter%2C_Lutra_Lutra.JPG',
-  postcode: 'B461QR'
+  postcode: 'B46 1QR'
 },{
   username: 'olly',
   email: 'olly@sam.com',
@@ -32,7 +32,7 @@ User
   password: 'Password3',
   passwordConfirmation: 'Password3',
   image: 'https://s-media-cache-ak0.pinimg.com/736x/d5/b1/41/d5b141034ccb0693ce8f3b8331817559.jpgg',
-  postcode: 'GL54 2HS'}])
+  postcode: 'PO6 2PS'}])
 .then((users) => {
   console.log(`${users.length} users created`);
   return Trail
@@ -335,7 +335,7 @@ User
     trailsCompleted: []
   }, {
     trailName: 'The Whalebone',
-    description: 'Starting at the Whalebone pub, this is a great walk for families. The path takes you from one across the River Colne and back again to form a whalebone.',
+    description: 'Starting at the Whalebone pub, this is a great walk for families. The path takes you from one across the River Colne and back again to form a weird looking whalebone.',
     difficulty: 2,
     createdBy: users[0],
     image: 'https://upload.wikimedia.org/wikipedia/commons/e/e0/Brighton_Pier_at_dusk.jpg',
@@ -384,7 +384,7 @@ User
       }],
     trailsCompleted: []
   }, {
-    trailName: 'Bring Your Daugther To The Slaughter',
+    trailName: 'You Can\'t Spell Slaughter Without Laughter',
     description: 'If you are sick to death of home, have a stab at this killer walk, which will surely lift your spirits. Suitable for all the family',
     difficulty: 1,
     createdBy: users[1],
