@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">24.24% </span>
+        <span class="strong">23.53% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>8/33</span>
+        <span class='fraction'>8/34</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>0/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">24.24% </span>
+        <span class="strong">23.53% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>8/33</span>
+        <span class='fraction'>8/34</span>
       </div>
     </div>
   </div>
@@ -181,7 +181,8 @@
 136
 137
 138
-139</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+139
+140</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
@@ -202,6 +203,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -330,127 +332,128 @@ const {
 &nbsp;
 <span class="fstat-no" title="function not covered" >function github(req, res, next) {</span>
 <span class="cstat-no" title="statement not covered" >  return rp({</span>
-      method: 'POST',
-      url: oauth.github.accessTokenURL,
-      qs: {
-        clientId: oauth.github.clientId,
-        clientSecret: oauth.github.clientSecret,
-        code: req.body.code
-      },
-      json: true
-    })
-    .then((token) =&gt; {
-<span class="cstat-no" title="statement not covered" >      return rp({</span>
-        method: 'GET',
-        url: oauth.github.profileURL,
-        qs: token,
-        json: true,
-        headers: {
-          'User-Agent': 'Request-Promise'
-        }
-      });
-    })
-    .then((profile) =&gt; {
-<span class="cstat-no" title="statement not covered" >      return User.findOne({</span>
-          $or: [{
-            githubId: profile.id
-          }, {
-            facebookId: profile.id
-          }, {
-            email: profile.email
-          }]
-        })
-        .then((user) =&gt; {
-<span class="cstat-no" title="statement not covered" >          if (!user) {</span>
-<span class="cstat-no" title="statement not covered" >            user = new User({</span>
-              username: profile.login,
-              email: profile.email
-            });
-          }
-&nbsp;
-<span class="cstat-no" title="statement not covered" >          user.githubId = profile.id;</span>
-<span class="cstat-no" title="statement not covered" >          user.image = profile.avatar_url;</span>
-<span class="cstat-no" title="statement not covered" >          return user.save();</span>
-        });
+    method: 'POST',
+    url: oauth.github.accessTokenURL,
+    qs: {
+      clientId: oauth.github.clientId,
+      clientSecret: oauth.github.clientSecret,
+      code: req.body.code
+    },
+    json: true
+  })
+  .then((token) =&gt; {
+<span class="cstat-no" title="statement not covered" >    console.log(token);</span>
+<span class="cstat-no" title="statement not covered" >    return rp({</span>
+      method: 'GET',
+      url: oauth.github.profileURL,
+      qs: token,
+      json: true,
+      headers: {
+        'User-Agent': 'Request-Promise'
+      }
+    });
+  })
+  .then((profile) =&gt; {
+<span class="cstat-no" title="statement not covered" >    return User.findOne({</span>
+      $or: [{
+        githubId: profile.id
+      }, {
+        facebookId: profile.id
+      }, {
+        email: profile.email
+      }]
     })
     .then((user) =&gt; {
-<span class="cstat-no" title="statement not covered" >      console.log(user);</span>
-      //create a JWT token and send it back to the angular app.
-<span class="cstat-no" title="statement not covered" >      const payload = {</span>
-        userId: user.id
-      };
-<span class="cstat-no" title="statement not covered" >      const token = jwt.sign(payload, secret, {</span>
-        expiresIn: '23hr'
-      });
+<span class="cstat-no" title="statement not covered" >      if (!user) {</span>
+<span class="cstat-no" title="statement not covered" >        user = new User({</span>
+          username: profile.login,
+          email: profile.email
+        });
+      }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      return res.json({</span>
-        token,
-        message: `Welcome back ${user.username}`
-      });
+<span class="cstat-no" title="statement not covered" >      user.githubId = profile.id;</span>
+<span class="cstat-no" title="statement not covered" >      user.image = profile.avatar_url;</span>
+<span class="cstat-no" title="statement not covered" >      return user.save();</span>
+    });
+  })
+  .then((user) =&gt; {
+<span class="cstat-no" title="statement not covered" >    console.log(user);</span>
+    //create a JWT token and send it back to the angular app.
+<span class="cstat-no" title="statement not covered" >    const payload = {</span>
+      userId: user.id
+    };
+<span class="cstat-no" title="statement not covered" >    const token = jwt.sign(payload, secret, {</span>
+      expiresIn: '23hr'
+    });
 &nbsp;
-    })
-    .catch(next);
+<span class="cstat-no" title="statement not covered" >    return res.json({</span>
+      token,
+      message: `Welcome back ${user.username}`
+    });
+&nbsp;
+  })
+  .catch(next);
 }
 &nbsp;
 <span class="fstat-no" title="function not covered" >function facebook(req, res, next) {</span>
 <span class="cstat-no" title="statement not covered" >  return rp({</span>
+    method: 'GET',
+    url: oauth.facebook.accessTokenURL,
+    qs: {
+      client_id: oauth.facebook.client_id,
+      redirect_uri: oauth.facebook.redirect_uri,
+      client_secret: oauth.facebook.client_secret,
+      code: req.body.code
+    },
+    json: true
+  })
+  .then((token) =&gt; {
+<span class="cstat-no" title="statement not covered" >    return rp({</span>
       method: 'GET',
-      url: oauth.facebook.accessTokenURL,
-      qs: {
-        client_id: oauth.facebook.client_id,
-        redirect_uri: oauth.facebook.redirect_uri,
-        client_secret: oauth.facebook.client_secret,
-        code: req.body.code
-      },
-      json: true
-    })
-    .then((token) =&gt; {
-<span class="cstat-no" title="statement not covered" >      return rp({</span>
-        method: 'GET',
-        url: 'https://graph.facebook.com/v2.5/me?fields=id,name,email,picture.height(100)',
-        qs: token,
+      url: 'https://graph.facebook.com/v2.5/me?fields=id,name,email,picture.height(100)',
+      qs: token,
 &nbsp;
-        json: true
-      });
-    })
-    .then((profile) =&gt; {
-<span class="cstat-no" title="statement not covered" >      console.log(profile);</span>
-<span class="cstat-no" title="statement not covered" >      return User.findOne({</span>
-          $or: [{
-            facebookId: profile.id
-          }, {
-            githubId: profile.id
-          }, {
-            email: profile.email
-          }]
-        })
-        .then((user) =&gt; {
-<span class="cstat-no" title="statement not covered" >          if (!user) {</span>
-<span class="cstat-no" title="statement not covered" >            user = new User({</span>
-              username: profile.name,
-              email: profile.email
-            });
-          }
-<span class="cstat-no" title="statement not covered" >          user.facebookId = profile.id;</span>
-<span class="cstat-no" title="statement not covered" >          user.image = profile.picture.data.url;</span>
-<span class="cstat-no" title="statement not covered" >          return user.save();</span>
-        });
+      json: true
+    });
+  })
+  .then((profile) =&gt; {
+<span class="cstat-no" title="statement not covered" >    console.log(profile);</span>
+<span class="cstat-no" title="statement not covered" >    return User.findOne({</span>
+      $or: [{
+        facebookId: profile.id
+      }, {
+        githubId: profile.id
+      }, {
+        email: profile.email
+      }]
     })
     .then((user) =&gt; {
-<span class="cstat-no" title="statement not covered" >      console.log(user);</span>
-<span class="cstat-no" title="statement not covered" >      const payload = {</span>
-        userId: user.id
-      };
-<span class="cstat-no" title="statement not covered" >      const token = jwt.sign(payload, secret, {</span>
-        expiresIn: '23hr'
-      });
+<span class="cstat-no" title="statement not covered" >      if (!user) {</span>
+<span class="cstat-no" title="statement not covered" >        user = new User({</span>
+          username: profile.name,
+          email: profile.email
+        });
+      }
+<span class="cstat-no" title="statement not covered" >      user.facebookId = profile.id;</span>
+<span class="cstat-no" title="statement not covered" >      user.image = profile.picture.data.url;</span>
+<span class="cstat-no" title="statement not covered" >      return user.save();</span>
+    });
+  })
+  .then((user) =&gt; {
+<span class="cstat-no" title="statement not covered" >    console.log(user);</span>
+<span class="cstat-no" title="statement not covered" >    const payload = {</span>
+      userId: user.id
+    };
+<span class="cstat-no" title="statement not covered" >    const token = jwt.sign(payload, secret, {</span>
+      expiresIn: '23hr'
+    });
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      return res.json({</span>
-        token,
-        message: `Welcome back ${user.username}`
-      });
-    })
-    .catch(next);
+<span class="cstat-no" title="statement not covered" >    return res.json({</span>
+      token,
+      message: `Welcome back ${user.username}`
+    });
+  })
+  .catch(next);
 }
 &nbsp;
 module.exports = {
@@ -463,7 +466,7 @@ module.exports = {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jul 04 2017 12:02:59 GMT+0100 (BST)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Jul 06 2017 09:20:41 GMT+0100 (BST)
 </div>
 </div>
 <script src="../../prettify.js"></script>

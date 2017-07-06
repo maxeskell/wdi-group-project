@@ -6,7 +6,7 @@
     <form>
       <div class="field">
         <p class="control has-icons-left">
-          <input class="input" base64 type="file" name="base64" id="image" ng-model="trailsNew.trail.base64" placeholder="Image" required>
+          <input class="input" base64 type="file" name="base64" id="image" ng-model="trailsNew.trail.base64" placeholder="Image" accept="image/x-png,image/gif,image/jpeg">
           <span class="icon is-medium is-left">
             <i class="fa fa-picture-o"></i>
           </span>
@@ -18,19 +18,20 @@
 
       <div class="field">
         <p class="control has-icons-left">
-          <input class="input" type="text" name="trailName" id="trailName" ng-model="trailsNew.trail.trailName" placeholder="Trail Name" required>
+          <input class="input" type="text" name="trailName" id="trailName" ng-model="trailsNew.trail.trailName" placeholder="Trail Name" required pattern="/^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$/" maxlength="20">
           <span class="icon is-medium is-left">
             <i class="fa fa-leaf"></i>
           </span>
           <div ng-messages="trailsNew.newForm.trailName.$error" role="alert" ng-show="(trailsNew.newForm.$submitted || trailsNew.newForm.trailName.$touched) && trailsNew.newForm.trailName.$invalid" class="error">
             <div ng-message="required">Trail name is required.</div>
+            <div ng-message="pattern">Please enter a valid trail name.</div>
           </div>
         </p>
       </div>
 
       <div class="field">
         <p class="control has-icons-left">
-          <input class="input" type="text" name="description" id="description" ng-model="trailsNew.trail.description" placeholder="Trail Description" required>
+          <input class="input" type="text" name="description" id="description" ng-model="trailsNew.trail.description" placeholder="Trail descriptions and directions" required maxlength="1000">
           <span class="icon is-medium is-left">
             <i class="fa fa-arrows"></i>
           </span>
@@ -45,11 +46,11 @@
           <span class="select is full-width">
             <select name="difficulty" id="difficulty" ng-model="trailsNew.trail.difficulty" required>
               <option disabled>Trail Difficulty</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
+              <option>1 </option>
+              <option>2 </option>
+              <option>3 </option>
+              <option>4 </option>
+              <option>5 </option>
             </select>
           </span>
           <span class="icon is-medium is-left">

@@ -12,14 +12,13 @@ function github(req, res, next) {
     method: 'POST',
     url: oauth.github.accessTokenURL,
     qs: {
-      clientId: oauth.github.clientId,
-      clientSecret: oauth.github.clientSecret,
+      client_id: oauth.github.clientId,
+      client_secret: oauth.github.clientSecret,
       code: req.body.code
     },
     json: true
   })
   .then((token) => {
-    console.log(token);
     return rp({
       method: 'GET',
       url: oauth.github.profileURL,
@@ -54,13 +53,11 @@ function github(req, res, next) {
     });
   })
   .then((user) => {
-    console.log(user);
-    //create a JWT token and send it back to the angular app.
     const payload = {
       userId: user.id
     };
     const token = jwt.sign(payload, secret, {
-      expiresIn: '23hr'
+      expiresIn: '1hr'
     });
 
     return res.json({
