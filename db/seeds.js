@@ -151,7 +151,7 @@ User
     trailName: 'Widley Walk',
     description: 'a beautiful coastal mountain stroll that is home to many rare and interesting species. You are welcome to use the trails to explore this uncommon forest where northern and southern species meet. Keep in mind that the trails here are rugged, rocky and steep. None of them can be described as easy',
     difficulty: 4,
-    image: 'https://s0.geograph.org.uk/photos/51/67/516718_e43f1c32.jpg',
+    image: 'https://s-media-cache-ak0.pinimg.com/736x/59/3a/d9/593ad9f502c0ce7a21d8079385320c3f--country-roads-country-life.jpg',
     createdBy: users[0],
     length: 5.5,
     time: '01:45',
