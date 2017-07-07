@@ -5,7 +5,7 @@
   <div class="field">
     <div class="content">
       <h2 class="title is-1">{{ profile.user.username }}</h2>
-      <img class="image profileimage" ng-src="{{ profile.user.image }}" alt="profile.user.username">
+      <img class="image profileimage" ng-src="{{ profile.user.imageSRC }}" alt="profile.user.username">
 
       <h3 ng-if="main.isAuthenticated() && main.currentUserId === profile.user.id && profile.user.email">Email:  {{ profile.user.email }}</h3>
       <p>Trails Completed: {{ profile.user.trailsCompleted.length }}</p>
