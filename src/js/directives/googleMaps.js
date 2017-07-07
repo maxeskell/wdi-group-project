@@ -51,18 +51,18 @@ function googleMap() {
           position: firstMarker,
           map
         });
-        marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
+        marker.setIcon('https://maps.google.com/mapfiles/ms/icons/green-dot.png');
         markerTwo = new google.maps.Marker({
           position: lastMarker,
           map
         });
-        markerTwo.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png');
+        markerTwo.setIcon('https://maps.google.com/mapfiles/ms/icons/red-dot.png');
         for (let i = 0; i < otherMarker.length; i++) {
           markerAll = new google.maps.Marker({
             position: otherMarker[i],
             map
           });
-          markerAll.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png');
+          markerAll.setIcon('https://maps.google.com/mapfiles/ms/icons/blue-dot.png');
         }
 
 
