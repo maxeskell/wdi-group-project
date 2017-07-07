@@ -23,8 +23,8 @@ body {
   position:relative;
   padding-bottom: 500px;
   &.home {
-    background-image: url('http://www.deerfields.ca/wp-content/uploads/2015/10/family-walking-down-path.jpg');
-    // background-image: url('images/background.jpg');
+    // background-image: url('http://www.deerfields.ca/wp-content/uploads/2015/10/family-walking-down-path.jpg');
+    background-image: url('../images/background.jpg');
     background-size: 100%;
     background-position: 40% 50%;
     background-repeat: no-repeat;
@@ -129,7 +129,7 @@ form {
   display: block;
 }
 .profileimage {
-  border: 5px white solid;
+  border: 5px w hite solid;
   border-radius: 5px;
   box-shadow: 1px 1px 1px 1px lightgrey;
 }
@@ -224,6 +224,11 @@ h1 {
       p{
         display: none;
       }
+    }
+  }
+  body{
+    &.home{
+      background-image: url('../images/landscape.jpg');
     }
   }
 }
