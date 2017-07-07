@@ -8,7 +8,7 @@ Download or fork the code and save it to your preferred directory.
 
 <h3> Installing </h3>
 Run Yarn to install all the developer and deployment dependencies </br>
-```gulp```
+```yarn```
 
 Install Yarn if you do not have it </br>
 ```brew install yarn``` <a href="https://yarnpkg.com/lang/en/docs/install/"> find help here</a>
@@ -53,12 +53,13 @@ This is a MEAN app (MongoDB, Express, Angular and Node).
 <h2> Versioning </h2>
 Current version is 1.0.  We plan to release v1.1 in the near future with the following enhancements:
 <ul>
-<li> Add distance of walk to current location </li>
-<li> Sliders on trails page that filter walks by: distance to current location, length, difficult </li>
-<li> Improve trails page so that it zooms to show user and nearest five routes </li>
-<li> Add accessibility to routes, so that people can record whether it is good for walking, cycling, wheelchairs and prams </li>
-<li> Improve comments by allowing people to up load images </li>
-<li> Allow people to edit their user profile </li>
+<li> An improved trails page that zooms to show the user on the map, their nearest five routes, and proximity distance of those walks from their current location </li>
+<li> New sliders on to the trails page that filter walks by: distance to current location, trail length & difficulty </li>
+<li> Accessibility information provided on all routes. Users will be able to record whether it is good for walking, cycling, wheelchairs and prams </li>
+<li> Enhanced trail creation and edit pages that allow users to add tags to their route based on the wildlife that can expect to see on their route. Users can then also filter trails based on wildlife that want to see </li>
+<li> Improved comments section that allows people to upload images to go with their comment (e.g. wildlife they saw) </li>
+<li>  New profile page that will enable people to edit their user profile </li>
+<li> Inclusion of the Unsplash API so if people have difficulty uploading or don't want to upload a picture, they can submit a photo from the API instead </li>
 </ul>
 
 <h2> Licence </h2>
@@ -66,4 +67,4 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 
 <h2> Acknowledgements </h2>
 This project would not have been possible without:
-Mike Hayden,  Emily Isacke, Markn Davis & Sam Domesjo
+Mike Hayden,  Emily Isacke, Mark Davis & Sam Domesjo
