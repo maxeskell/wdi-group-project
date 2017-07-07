@@ -3,7 +3,7 @@
 <div class="column is-8 is-offset-2">
   <div class="field">
     <h1 class="title">Create a New Trail </h1>
-    <form>
+    <form name="trailsNew.newForm" ng-submit="trailsNew.create()" novalidate>
       <div class="field">
         <p class="control has-icons-left">
           <input class="input" base64 type="file" name="base64" id="image" ng-model="trailsNew.trail.base64" placeholder="Image" accept="image/x-png,image/gif,image/jpeg">
