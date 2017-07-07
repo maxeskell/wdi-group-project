@@ -59,7 +59,7 @@ trailSchema
   .virtual('imageSRC')
   .get(function getImageSRC() {
     if (!this.image) return null;
-    if (this.image.match(/^http/)) return this.image;
+    if (this.image.match(/^https/)) return this.image;
     return `https://s3-eu-west-1.amazonaws.com/wdi27-group-project/${this.image}`;
   });
 
