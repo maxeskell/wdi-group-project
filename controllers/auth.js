@@ -5,6 +5,7 @@ const {
 } = require('../config/environment');
 
 function register(req, res, next) {
+  if (req.file) req.body.image = req.file.filename;
   User
     .create(req.body)
     .then(() => res.json({
