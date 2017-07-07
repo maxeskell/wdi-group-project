@@ -186,7 +186,7 @@ User
     description: 'This is a lovely route, really easy for all ages and abilities',
     difficulty: 1,
     createdBy: users[1],
-    image: 'https://upload.wikimedia.org/wikipedia/commons/e/e0/Brighton_Pier_at_dusk.jpg',
+    image: 'https://s-media-cache-ak0.pinimg.com/236x/8f/81/b4/8f81b46c622592b1777106489fc42adb.jpg',
     length: 5.5,
     time: '01:45',
     route: [
