@@ -1,6 +1,9 @@
 {
   "name": "wdi-project-3",
   "version": "1.0.0",
+  "engines": {
+    "node": "7.1.0"
+  },
   "description": "WDI Project 3",
   "main": "index.js",
   "scripts": {
